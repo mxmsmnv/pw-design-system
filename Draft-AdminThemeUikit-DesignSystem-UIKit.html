@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdminThemeUikit — Design System Reference</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/css/uikit.min.css">
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit-icons.min.js"></script>
+<style>
+:root {
+  color-scheme: light dark;
+  --pw-main-color: #eb1d61;
+  --pw-text-color: light-dark(#111, white);
+  --pw-muted-color: light-dark(rgba(0,0,0,0.55), rgba(255,255,255,0.6));
+  --pw-border-color: light-dark(rgba(0,0,0,0.16), #444);
+  --pw-main-background: light-dark(#eee, #222);
+  --pw-inputs-background: light-dark(#f8f8f8, #161616);
+  --pw-blocks-background: light-dark(white, black);
+  --pw-button-background: light-dark(var(--pw-text-color), var(--pw-main-color));
+  --pw-button-color: light-dark(var(--pw-blocks-background), var(--pw-text-color));
+  --pw-button-border: transparent;
+  --pw-button-muted-background: light-dark(#737373, #404040);
+  --pw-button-muted-color: light-dark(var(--pw-blocks-background), var(--pw-text-color));
+  --pw-button-muted-border: transparent;
+  --pw-button-hover-background: light-dark(var(--pw-main-color), var(--pw-text-color));
+  --pw-button-hover-color: var(--pw-blocks-background);
+  --pw-button-hover-border: transparent;
+  --pw-menu-item-background-hover: var(--pw-main-background);
+  --pw-masthead-background: var(--pw-blocks-background);
+  --pw-masthead-active-color: var(--pw-text-color);
+  --pw-masthead-text-color: var(--pw-muted-color);
+  --pw-masthead-border-color: var(--pw-border-color);
+  --pw-masthead-logo-color: var(--pw-main-color);
+  --pw-masthead-input-background: var(--pw-inputs-background);
+  --pw-masthead-input-color: var(--pw-text-color);
+  --pw-masthead-input-border: var(--pw-border-color);
+  --pw-masthead-menu-item-background-hover: var(--pw-menu-item-background-hover);
+  --pw-modal-color: rgba(0,0,0,0.7);
+  --pw-error-inline-text-color: light-dark(#cd0a0a, #ff7171);
+  --pw-code-color: light-dark(#0173b0, #e7e695);
+  --pw-code-background: light-dark(var(--pw-inputs-background), #3c3c3c5e);
+  --pw-alert-text-color: var(--pw-text-color);
+  --pw-alert-primary: var(--pw-main-background);
+  --pw-alert-warning: light-dark(#fff0be, #d57f00);
+  --pw-alert-success: light-dark(#c1e7cd, #139472);
+  --pw-alert-danger: light-dark(#fee6e6, #8a1919);
+  --pw-notes-background: light-dark(#ffd, #bdbdbd33);
+  --pw-button-radius: 99999px;
+  --pw-input-radius: 0;
+}
+body.light-theme, html:has(body.light-theme) { color-scheme: light; }
+body.dark-theme, html:has(body.dark-theme) { color-scheme: dark; }
+body.dark-theme * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { color: var(--pw-text-color); background: var(--pw-main-background); }
+a, .uk-link { color: var(--pw-main-color); }
+a:hover, .uk-link:hover { color: var(--pw-text-color); }
+h1,.uk-h1,h2,.uk-h2,h3,.uk-h3,h4,.uk-h4,h5,.uk-h5,h6,.uk-h6 { color: var(--pw-text-color); }
+hr, .uk-hr { border-top-color: var(--pw-border-color); }
+:not(pre)>code,:not(pre)>kbd,:not(pre)>samp { color: var(--pw-code-color); background-color: var(--pw-code-background); padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+pre code { color: var(--pw-code-color); }
+.uk-input,.uk-select,.uk-textarea { background-color: var(--pw-inputs-background); color: var(--pw-text-color); border-color: var(--pw-border-color); border-radius: var(--pw-input-radius); }
+.uk-input:focus,.uk-select:focus,.uk-textarea:focus { background-color: var(--pw-blocks-background); color: var(--pw-text-color); border-color: var(--pw-muted-color); }
+.uk-input::placeholder,.uk-textarea::placeholder { color: var(--pw-muted-color); }
+.uk-form-label { color: var(--pw-text-color); font-weight: 600; }
+.uk-button { border-radius: var(--pw-button-radius); }
+.uk-button-primary { background-color: var(--pw-button-background); color: var(--pw-button-color); border: 1px solid var(--pw-button-border); }
+.uk-button-primary:hover { background-color: var(--pw-button-hover-background); color: var(--pw-button-hover-color); }
+.uk-button-default { background-color: var(--pw-blocks-background); color: var(--pw-text-color); border: 1px solid var(--pw-border-color); }
+.uk-button-default:hover { background-color: var(--pw-main-background); color: var(--pw-text-color); border-color: var(--pw-border-color); }
+.uk-button-secondary { background-color: var(--pw-button-muted-background); color: var(--pw-button-muted-color); }
+.uk-button-secondary:hover { background-color: var(--pw-button-hover-background); color: var(--pw-button-hover-color); }
+.uk-button-danger { background-color: var(--pw-error-inline-text-color); color: light-dark(var(--pw-blocks-background), var(--pw-text-color)); }
+.uk-button-danger:hover { filter: brightness(1.1); }
+.uk-button-text { color: var(--pw-muted-color); }
+.uk-button-text:hover { color: var(--pw-text-color); }
+.uk-button-link { color: var(--pw-main-color); }
+.uk-table th { color: var(--pw-muted-color); }
+.uk-table caption { color: var(--pw-muted-color); }
+.uk-table-divider>tr:not(:first-child),.uk-table-divider>:not(:first-child)>tr,.uk-table-divider>:first-child>tr:not(:first-child) { border-top-color: var(--pw-border-color); }
+.uk-table-striped>tr:nth-of-type(odd),.uk-table-striped tbody tr:nth-of-type(odd) { background: var(--pw-inputs-background); border-top-color: var(--pw-border-color); border-bottom-color: var(--pw-border-color); }
+.uk-table-hover>tr:hover,.uk-table-hover tbody tr:hover { background: var(--pw-inputs-background); }
+.uk-alert { color: var(--pw-alert-text-color); }
+.uk-alert-primary { background: var(--pw-alert-primary); }
+.uk-alert-success { background: var(--pw-alert-success); }
+.uk-alert-warning { background: var(--pw-alert-warning); }
+.uk-alert-danger { background: var(--pw-alert-danger); }
+.uk-badge,.uk-label { background: var(--pw-main-color); color: light-dark(var(--pw-blocks-background), var(--pw-text-color)) !important; }
+.uk-label-success { background-color: var(--pw-alert-success) !important; color: var(--pw-text-color) !important; }
+.uk-label-warning { background-color: var(--pw-alert-warning) !important; color: var(--pw-text-color) !important; }
+.uk-label-danger { background-color: var(--pw-error-inline-text-color) !important; }
+.uk-tab::before { border-bottom-color: var(--pw-border-color); }
+.uk-tab>*>a { color: var(--pw-muted-color); }
+.uk-tab>*>a:hover { color: var(--pw-text-color); border-color: var(--pw-border-color); }
+.uk-tab>.uk-active>a { color: var(--pw-text-color); border-color: var(--pw-main-color); }
+.uk-tab>.uk-disabled>a { color: var(--pw-muted-color); }
+.uk-subnav>*>:first-child { color: var(--pw-muted-color); }
+.uk-subnav>*>a:hover { color: var(--pw-text-color); }
+.uk-subnav>.uk-active>a { color: var(--pw-text-color); }
+.uk-subnav-pill>.uk-active>a { background-color: var(--pw-main-color); color: #fff; }
+.uk-subnav-divider>:nth-child(n+2):not(.uk-first-column)::before { border-left-color: var(--pw-border-color); }
+.uk-accordion-title { color: var(--pw-text-color); }
+.uk-accordion-title:hover { color: var(--pw-muted-color); }
+.uk-card { color: var(--pw-text-color); }
+.uk-card-default { background: var(--pw-blocks-background); border: 1px solid var(--pw-border-color); }
+.uk-card-default .uk-card-title { color: var(--pw-text-color); }
+.uk-card-primary { background: var(--pw-main-color); }
+.uk-card-secondary { background: var(--pw-inputs-background); }
+.uk-card-muted { background: var(--pw-main-background); }
+.pw-masthead { background: var(--pw-masthead-background); border-bottom: 1px solid var(--pw-masthead-border-color); padding: 0 16px; }
+.pw-masthead .uk-navbar-nav>li>a { color: var(--pw-masthead-text-color); }
+.pw-masthead .uk-navbar-nav>li>a:hover,.pw-masthead .uk-navbar-nav>li.uk-active>a { color: var(--pw-masthead-active-color); }
+.pw-masthead .uk-logo { color: var(--pw-masthead-logo-color); }
+.pw-masthead .uk-search-input { background: var(--pw-masthead-input-background); color: var(--pw-masthead-input-color); border: 1px solid var(--pw-masthead-input-border); border-radius: 4px; }
+.uk-breadcrumb>*>* { color: var(--pw-muted-color); }
+.uk-breadcrumb>*>:hover { color: var(--pw-main-color); }
+.uk-breadcrumb>:last-child>* { color: var(--pw-text-color); }
+.uk-breadcrumb>:nth-child(n+2):not(.uk-first-column)::before { color: var(--pw-muted-color); }
+.uk-notification-message { background: var(--pw-blocks-background); color: var(--pw-text-color); }
+.uk-notification-message-primary { color: var(--pw-main-color); }
+.uk-notification-message-success { color: var(--pw-alert-success); }
+.uk-notification-message-warning { color: var(--pw-alert-warning); }
+.uk-notification-message-danger { color: var(--pw-error-inline-text-color); }
+.uk-pagination>*>* { color: var(--pw-muted-color); }
+.uk-pagination>*>:hover { color: var(--pw-text-color); }
+.uk-pagination>.uk-active>* { color: var(--pw-text-color); }
+.uk-description-list>dt { color: var(--pw-text-color); }
+.uk-description-list-divider>dt:nth-child(n+2) { border-top-color: var(--pw-border-color); }
+.uk-progress { background: var(--pw-main-background); }
+.uk-progress::-webkit-progress-value { background-color: var(--pw-main-color); }
+.uk-progress::-moz-progress-bar { background-color: var(--pw-main-color); }
+.uk-placeholder { border-color: var(--pw-border-color); background: var(--pw-inputs-background); }
+.uk-modal-dialog { background: var(--pw-blocks-background); color: var(--pw-text-color); }
+.uk-modal-header { border-bottom-color: var(--pw-border-color); }
+.uk-modal-footer { border-top-color: var(--pw-border-color); }
+.uk-modal-title { color: var(--pw-text-color); }
+.uk-offcanvas-bar { background: var(--pw-blocks-background); color: var(--pw-text-color); }
+.uk-nav-default>li>a { color: var(--pw-muted-color); }
+.uk-nav-default>li>a:hover { color: var(--pw-text-color); }
+.uk-nav-default>li.uk-active>a { color: var(--pw-main-color); }
+.uk-nav-default .uk-nav-header { color: var(--pw-text-color); }
+.uk-nav-default .uk-nav-divider { border-top-color: var(--pw-border-color); }
+.uk-nav-default .uk-nav-sub a { color: var(--pw-muted-color); }
+.uk-nav-default .uk-nav-sub a:hover { color: var(--pw-main-color); }
+.uk-text-muted { color: var(--pw-muted-color) !important; }
+.uk-text-primary { color: var(--pw-main-color) !important; }
+.uk-text-danger { color: var(--pw-error-inline-text-color) !important; }
+.uk-text-success { color: light-dark(#14ae85, #139472) !important; }
+.uk-text-warning { color: light-dark(#d57f00, #d57f00) !important; }
+.uk-text-secondary { color: var(--pw-muted-color) !important; }
+.uk-text-emphasis { color: var(--pw-text-color) !important; }
+.uk-background-muted { background-color: var(--pw-main-background) !important; }
+.uk-background-primary { background-color: var(--pw-main-color) !important; }
+.uk-background-secondary { background-color: var(--pw-inputs-background) !important; }
+.uk-background-default { background-color: var(--pw-blocks-background) !important; }
+.uk-section-muted { background: var(--pw-main-background); }
+.uk-section-default { background: var(--pw-blocks-background); }
+.uk-section-primary { background: var(--pw-main-color); color: #fff; }
+.uk-section-secondary { background: var(--pw-inputs-background); }
+.uk-tile-default { background: var(--pw-blocks-background); }
+.uk-tile-muted { background: var(--pw-main-background); }
+.uk-tile-primary { background: var(--pw-main-color); }
+.uk-tile-secondary { background: var(--pw-inputs-background); }
+.uk-overlay-default { background: var(--pw-modal-color); }
+.uk-overlay-primary { background: var(--pw-modal-color); }
+.uk-comment-meta { color: var(--pw-muted-color); }
+.uk-comment-meta a { color: var(--pw-muted-color); }
+.uk-marker { background: var(--pw-main-color); color: #fff; }
+.uk-heading-divider { border-bottom-color: var(--pw-border-color); }
+.uk-heading-bullet::before { border-left-color: var(--pw-border-color); }
+.uk-heading-line>*::before, .uk-heading-line>*::after { border-bottom-color: var(--pw-border-color); }
+.uk-list-muted>::before { color: var(--pw-muted-color) !important; }
+.uk-list-emphasis>::before { color: var(--pw-text-color) !important; }
+.uk-list-primary>::before { color: var(--pw-main-color) !important; }
+.uk-list-secondary>::before { color: var(--pw-muted-color) !important; }
+.uk-dotnav>*>* { background: var(--pw-border-color); }
+.uk-dotnav>.uk-active>* { background: var(--pw-main-color); }
+.uk-iconnav>*>a { color: var(--pw-muted-color); }
+.uk-iconnav>*>a:hover { color: var(--pw-text-color); }
+.uk-navbar-container:not(.uk-navbar-transparent) { background: var(--pw-blocks-background); }
+.uk-navbar-dropdown { background: var(--pw-blocks-background); color: var(--pw-text-color); }
+.uk-navbar-dropdown-nav>li>a { color: var(--pw-muted-color); }
+.uk-navbar-dropdown-nav>li>a:hover { color: var(--pw-text-color); }
+.uk-navbar-dropdown-nav>li.uk-active>a { color: var(--pw-main-color); }
+.uk-panel-scrollable { border-color: var(--pw-border-color); }
+.uk-legend { color: var(--pw-text-color); }
+.uk-divider-icon { border-bottom-color: var(--pw-border-color); }
+.uk-divider-icon::before, .uk-divider-icon::after { border-bottom-color: var(--pw-border-color); }
+.uk-divider-small::after { border-top-color: var(--pw-border-color); }
+a.uk-link-muted, .uk-link-muted a { color: var(--pw-muted-color); }
+a.uk-link-muted:hover, .uk-link-muted a:hover { color: var(--pw-text-color); }
+a.uk-link-text:hover, .uk-link-text a:hover { color: var(--pw-muted-color); }
+a.uk-link-heading:hover, .uk-link-heading a:hover { color: var(--pw-main-color); }
+.uk-nav-primary>li>a { color: var(--pw-muted-color); font-size: 1.2em; }
+.uk-nav-primary>li>a:hover { color: var(--pw-text-color); }
+.uk-nav-primary>li.uk-active>a { color: var(--pw-main-color); }
+.uk-nav-center { text-align: center; }
+.uk-form-danger, .uk-form-danger:focus { border-color: var(--pw-error-inline-text-color) !important; }
+.uk-form-success, .uk-form-success:focus { border-color: light-dark(#14ae85, #139472) !important; }
+.uk-icon-link { color: var(--pw-muted-color); }
+.uk-icon-link:hover { color: var(--pw-text-color); }
+.uk-icon-button { background-color: var(--pw-inputs-background); color: var(--pw-muted-color); }
+.uk-icon-button:hover { background-color: var(--pw-inputs-background); color: var(--pw-text-color); }
+.uk-dropdown { background: var(--pw-blocks-background); color: var(--pw-text-color); }
+.uk-dropdown-nav>li>a { color: var(--pw-muted-color); }
+.uk-dropdown-nav>li>a:hover { color: var(--pw-text-color); }
+.uk-dropdown-nav>li.uk-active>a { color: var(--pw-main-color); }
+.uk-list-divider>:nth-child(n+2) { border-top-color: var(--pw-border-color); }
+.uk-list-striped>*:nth-of-type(odd) { background: var(--pw-inputs-background); border-color: var(--pw-border-color); }
+.uk-search-default .uk-search-input { background: var(--pw-inputs-background); border: 1px solid var(--pw-border-color); border-radius: var(--pw-input-radius); }
+.uk-tooltip { background: var(--pw-text-color); color: var(--pw-blocks-background); }
+.uk-spinner>* { color: var(--pw-main-color); }
+.uk-article-title { color: var(--pw-text-color); }
+.uk-article-meta { color: var(--pw-muted-color); }
+/* PW Inputfield wrappers */
+.pw-inputfield { border: 1px solid var(--pw-border-color); margin-bottom: 2px; }
+.pw-inputfield-header { padding: 10px 16px; background: var(--pw-inputs-background); cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: 14px; user-select: none; }
+.pw-inputfield-header:hover { background: var(--pw-menu-item-background-hover); }
+.pw-inputfield-content { padding: 16px; }
+.pw-inputfield.collapsed .pw-inputfield-content { display: none; }
+.pw-inputfield.collapsed .pw-inputfield-header [uk-icon] { transform: rotate(-90deg); }
+.pw-inputfield-header.pw-bold { background: var(--pw-main-color); color: rgba(255,255,255,0.9); border-color: var(--pw-main-color); }
+.pw-inputfield-header.pw-bold:hover { filter: brightness(1.05); }
+/* PageList actions */
+.pw-pagelist-actions a { display: inline-block; background-color: var(--pw-main-color); color: #fff; padding: 2px 6px; font-weight: bold; text-transform: lowercase; font-size: 11px; border-radius: 3px; text-decoration: none; }
+.pw-pagelist-actions a:hover { filter: brightness(1.08); color: #fff; }
+/* Notes */
+.pw-notes { background: var(--pw-notes-background); padding: 8px 12px; font-size: 13px; color: var(--pw-muted-color); }
+/* Page helpers */
+/* Sidebar nav left padding */
+aside > .uk-nav { padding: 0 8px; }
+aside > .uk-nav > li > a { padding-left: 16px; }
+aside > .uk-nav > .uk-nav-header { padding-left: 16px; }
+/* PW Save button with dropdown (from ProcessPageEdit) */
+.pw-button-dropdown-wrap { display: inline-flex; }
+.pw-button-dropdown-wrap .pw-head-button {
+  background: var(--pw-button-background);
+  color: var(--pw-button-color);
+  border: 1px solid var(--pw-button-border);
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: var(--pw-button-radius) 0 0 var(--pw-button-radius);
+}
+.pw-button-dropdown-wrap .pw-head-button:hover {
+  background: var(--pw-button-hover-background);
+  color: var(--pw-button-hover-color);
+}
+.pw-button-dropdown-wrap .pw-button-dropdown-toggle {
+  background: var(--pw-button-background);
+  color: var(--pw-button-color);
+  border: 1px solid var(--pw-button-border);
+  border-left: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 0 var(--pw-button-radius) var(--pw-button-radius) 0;
+}
+.pw-button-dropdown-wrap .pw-button-dropdown-toggle:hover {
+  background: var(--pw-button-hover-background);
+  color: var(--pw-button-hover-color);
+}
+.ds-section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pw-muted-color); margin-bottom: 12px; }
+.ds-swatch { height: 56px; border-radius: 6px; border: 1px solid var(--pw-border-color); }
+.ds-var { font-family: 'SFMono-Regular',Consolas,monospace; font-size: 12px; color: var(--pw-code-color); }
+.ds-code-block { background: var(--pw-code-background); padding: 16px 20px; border-radius: 4px; overflow-x: auto; font-family: 'SFMono-Regular',Consolas,monospace; font-size: 12.5px; color: var(--pw-code-color); line-height: 1.7; white-space: pre; }
+.ds-accent-btn { width: 28px; height: 28px; border-radius: 50%; border: 3px solid transparent; cursor: pointer; transition: border-color 0.15s, transform 0.15s; padding: 0; }
+.ds-accent-btn:hover,.ds-accent-btn.uk-active { border-color: var(--pw-text-color); transform: scale(1.15); }
+.ds-theme-fab { position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; gap: 4px; background: var(--pw-blocks-background); border: 1px solid var(--pw-border-color); border-radius: 99px; padding: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.ds-theme-fab button { width: 34px; height: 34px; border-radius: 50%; border: none; cursor: pointer; background: transparent; color: var(--pw-muted-color); font-size: 15px; display: flex; align-items: center; justify-content: center; }
+.ds-theme-fab button:hover,.ds-theme-fab button.uk-active { background: var(--pw-main-color); color: #fff; }
+/* Mobile nav toggle */
+.ds-mobile-toggle {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1010;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--pw-border-color);
+  background: var(--pw-blocks-background);
+  color: var(--pw-text-color);
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+@media (max-width: 959px) {
+  .ds-mobile-toggle { display: flex; }
+  .ds-main-content { padding-top: 60px; }
+}
+/* Custom mobile sidebar (not uk-offcanvas, for artifact compatibility) */
+.ds-mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--pw-blocks-background);
+  border-right: 1px solid var(--pw-border-color);
+  z-index: 1020;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  padding: 20px;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+}
+.ds-mobile-sidebar.open { transform: translateX(0); }
+.ds-mobile-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1015;
+  display: none;
+}
+.ds-mobile-overlay.open { display: block; }
+.ds-mobile-sidebar .uk-nav > li > a { padding: 6px 12px; font-size: 14px; }
+.ds-mobile-sidebar .uk-nav > .uk-nav-header { padding: 12px 12px 4px; }
+.ds-mobile-sidebar .uk-nav > .uk-nav-divider { margin: 4px 12px; }
+.ds-mobile-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--pw-muted-color);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile nav toggle -->
+<button class="ds-mobile-toggle uk-hidden@m" onclick="document.getElementById('ds-mob-sidebar').classList.add('open');document.getElementById('ds-mob-overlay').classList.add('open');" type="button">
+<span uk-icon="icon:menu;ratio:1.2"></span>
+</button>
+
+<!-- Mobile overlay -->
+<div id="ds-mob-overlay" class="ds-mobile-overlay" onclick="document.getElementById('ds-mob-sidebar').classList.remove('open');this.classList.remove('open');"></div>
+
+<!-- Mobile sidebar -->
+<div id="ds-mob-sidebar" class="ds-mobile-sidebar">
+<button class="ds-mobile-close" onclick="this.parentElement.classList.remove('open');document.getElementById('ds-mob-overlay').classList.remove('open');">&times;</button>
+<a class="uk-logo" href="#" style="color:var(--pw-masthead-logo-color);display:block;margin-bottom:12px;">
+<span uk-icon="icon:bolt;ratio:1.1"></span> PW Uikit
+</a>
+<div class="uk-text-small uk-text-muted uk-margin-small-bottom">Design System &middot; v36</div>
+<hr class="uk-hr uk-margin-small">
+<ul class="uk-nav uk-nav-default">
+<li class="uk-nav-header">Foundation</li>
+<li><a href="#colors" class="ds-mob-link">Colors &amp; Tokens</a></li>
+<li><a href="#typography" class="ds-mob-link">Typography</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Components</li>
+<li><a href="#buttons" class="ds-mob-link">Buttons</a></li>
+<li><a href="#forms" class="ds-mob-link">Form Elements</a></li>
+<li><a href="#labels" class="ds-mob-link">Labels &amp; Badges</a></li>
+<li><a href="#alerts" class="ds-mob-link">Alerts</a></li>
+<li><a href="#tables" class="ds-mob-link">Tables</a></li>
+<li><a href="#tabs" class="ds-mob-link">Tab &amp; Subnav</a></li>
+<li><a href="#cards" class="ds-mob-link">Cards</a></li>
+<li><a href="#accordion" class="ds-mob-link">Accordion</a></li>
+<li><a href="#nav" class="ds-mob-link">Nav</a></li>
+<li><a href="#icons" class="ds-mob-link">Icons</a></li>
+<li><a href="#lists" class="ds-mob-link">Lists</a></li>
+<li><a href="#progress" class="ds-mob-link">Progress</a></li>
+<li><a href="#headings" class="ds-mob-link">Heading Styles</a></li>
+<li><a href="#tiles" class="ds-mob-link">Sections &amp; Tiles</a></li>
+<li><a href="#overlay" class="ds-mob-link">Overlay</a></li>
+<li><a href="#text-utils" class="ds-mob-link">Text Utilities</a></li>
+<li><a href="#utility" class="ds-mob-link">Utility Classes</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Patterns</li>
+<li><a href="#masthead" class="ds-mob-link">Masthead</a></li>
+<li><a href="#breadcrumb" class="ds-mob-link">Breadcrumb</a></li>
+<li><a href="#inputfields" class="ds-mob-link">Inputfield Wrappers</a></li>
+<li><a href="#modals" class="ds-mob-link">Modal</a></li>
+<li><a href="#offcanvas" class="ds-mob-link">Offcanvas</a></li>
+<li><a href="#dropdown" class="ds-mob-link">Dropdown</a></li>
+<li><a href="#notifications" class="ds-mob-link">Notifications</a></li>
+<li><a href="#pagination" class="ds-mob-link">Pagination</a></li>
+<li><a href="#search" class="ds-mob-link">Search</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Theming</li>
+<li><a href="#accents" class="ds-mob-link">Accent Colors</a></li>
+<li><a href="#overrides" class="ds-mob-link">CSS Overrides</a></li>
+</ul>
+</div>
+
+<div uk-grid class="uk-grid-collapse">
+<aside class="uk-width-medium uk-visible@m" style="position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--pw-blocks-background);border-right:1px solid var(--pw-border-color);">
+<div style="padding:16px 20px;"><a class="uk-logo uk-margin-small-bottom" href="#" style="color:var(--pw-masthead-logo-color);"><span uk-icon="icon:bolt;ratio:1.2"></span> PW Uikit</a><div class="uk-text-small uk-text-muted">Design System &middot; v36</div></div>
+<hr class="uk-hr uk-margin-remove">
+<ul class="uk-nav uk-nav-default uk-margin-small-top">
+<li class="uk-nav-header">Foundation</li>
+<li><a href="#colors"><span uk-icon="icon:paint-bucket;ratio:0.8" class="uk-margin-small-right"></span>Colors &amp; Tokens</a></li>
+<li><a href="#typography"><span uk-icon="icon:file-text;ratio:0.8" class="uk-margin-small-right"></span>Typography</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Components</li>
+<li><a href="#buttons"><span uk-icon="icon:plus-circle;ratio:0.8" class="uk-margin-small-right"></span>Buttons</a></li>
+<li><a href="#forms"><span uk-icon="icon:file-edit;ratio:0.8" class="uk-margin-small-right"></span>Form Elements</a></li>
+<li><a href="#labels"><span uk-icon="icon:tag;ratio:0.8" class="uk-margin-small-right"></span>Labels &amp; Badges</a></li>
+<li><a href="#alerts"><span uk-icon="icon:warning;ratio:0.8" class="uk-margin-small-right"></span>Alerts</a></li>
+<li><a href="#tables"><span uk-icon="icon:table;ratio:0.8" class="uk-margin-small-right"></span>Tables</a></li>
+<li><a href="#tabs"><span uk-icon="icon:menu;ratio:0.8" class="uk-margin-small-right"></span>Tab &amp; Subnav</a></li>
+<li><a href="#cards"><span uk-icon="icon:thumbnails;ratio:0.8" class="uk-margin-small-right"></span>Cards</a></li>
+<li><a href="#accordion"><span uk-icon="icon:list;ratio:0.8" class="uk-margin-small-right"></span>Accordion</a></li>
+<li><a href="#nav"><span uk-icon="icon:menu;ratio:0.8" class="uk-margin-small-right"></span>Nav</a></li>
+<li><a href="#icons"><span uk-icon="icon:star;ratio:0.8" class="uk-margin-small-right"></span>Icons</a></li>
+<li><a href="#lists"><span uk-icon="icon:list;ratio:0.8" class="uk-margin-small-right"></span>Lists</a></li>
+<li><a href="#progress"><span uk-icon="icon:clock;ratio:0.8" class="uk-margin-small-right"></span>Progress</a></li>
+<li><a href="#headings"><span uk-icon="icon:bold;ratio:0.8" class="uk-margin-small-right"></span>Heading Styles</a></li>
+<li><a href="#tiles"><span uk-icon="icon:grid;ratio:0.8" class="uk-margin-small-right"></span>Sections &amp; Tiles</a></li>
+<li><a href="#overlay"><span uk-icon="icon:image;ratio:0.8" class="uk-margin-small-right"></span>Overlay &amp; Marker</a></li>
+<li><a href="#dotnav"><span uk-icon="icon:more;ratio:0.8" class="uk-margin-small-right"></span>Dotnav &amp; Slidenav</a></li>
+<li><a href="#text-utils"><span uk-icon="icon:strikethrough;ratio:0.8" class="uk-margin-small-right"></span>Text Utilities</a></li>
+<li><a href="#utility"><span uk-icon="icon:cog;ratio:0.8" class="uk-margin-small-right"></span>Utility Classes</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Patterns</li>
+<li><a href="#masthead"><span uk-icon="icon:home;ratio:0.8" class="uk-margin-small-right"></span>Masthead</a></li>
+<li><a href="#breadcrumb"><span uk-icon="icon:arrow-right;ratio:0.8" class="uk-margin-small-right"></span>Breadcrumb</a></li>
+<li><a href="#inputfields"><span uk-icon="icon:settings;ratio:0.8" class="uk-margin-small-right"></span>Inputfield Wrappers</a></li>
+<li><a href="#modals"><span uk-icon="icon:expand;ratio:0.8" class="uk-margin-small-right"></span>Modal</a></li>
+<li><a href="#offcanvas"><span uk-icon="icon:push;ratio:0.8" class="uk-margin-small-right"></span>Offcanvas</a></li>
+<li><a href="#dropdown"><span uk-icon="icon:triangle-down;ratio:0.8" class="uk-margin-small-right"></span>Dropdown &amp; Navbar DD</a></li>
+<li><a href="#lightbox"><span uk-icon="icon:image;ratio:0.8" class="uk-margin-small-right"></span>Lightbox</a></li>
+<li><a href="#notifications"><span uk-icon="icon:bell;ratio:0.8" class="uk-margin-small-right"></span>Notifications</a></li>
+<li><a href="#pagination"><span uk-icon="icon:more;ratio:0.8" class="uk-margin-small-right"></span>Pagination</a></li>
+<li><a href="#description-list"><span uk-icon="icon:info;ratio:0.8" class="uk-margin-small-right"></span>Description List</a></li>
+<li><a href="#search"><span uk-icon="icon:search;ratio:0.8" class="uk-margin-small-right"></span>Search</a></li>
+<li><a href="#comment"><span uk-icon="icon:comment;ratio:0.8" class="uk-margin-small-right"></span>Comment</a></li>
+<li><a href="#panel"><span uk-icon="icon:file-text;ratio:0.8" class="uk-margin-small-right"></span>Panel &amp; Scrollable</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Theming</li>
+<li><a href="#accents"><span uk-icon="icon:paint-bucket;ratio:0.8" class="uk-margin-small-right"></span>Accent Colors</a></li>
+<li><a href="#overrides"><span uk-icon="icon:code;ratio:0.8" class="uk-margin-small-right"></span>CSS Overrides</a></li>
+</ul>
+</aside>
+<div class="uk-width-expand">
+<div class="uk-container uk-container-expand uk-padding">
+
+<div class="uk-margin-large-bottom" style="max-width:700px;">
+<span class="uk-label uk-margin-small-bottom" style="display:inline-block;">ProcessWire CMS</span>
+<h1 class="uk-heading-medium uk-margin-small-top">AdminThemeUikit<br>Design System</h1>
+<p class="uk-text-lead uk-text-muted">Every UIkit component and CSS custom property used in the ProcessWire admin. Native <code>uk-*</code> classes with PW admin token overrides.</p>
+</div>
+
+<section id="colors" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Colors &amp; Design Tokens</h2>
+<p class="uk-text-muted">CSS custom properties using <code>light-dark()</code>. Defined on <code>:root</code> in <code>themes/default/admin-custom.css</code>.</p>
+<div class="ds-section-label uk-margin-top">Core Palette</div>
+<div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
+<div><div class="ds-swatch" style="background:var(--pw-main-color);"></div><div class="uk-text-small uk-margin-small-top"><strong>Main Color</strong><br><span class="ds-var">--pw-main-color</span><br>#eb1d61</div></div>
+<div><div class="ds-swatch" style="background:var(--pw-text-color);"></div><div class="uk-text-small uk-margin-small-top"><strong>Text</strong><br><span class="ds-var">--pw-text-color</span><br>light:#111 / dark:#fff</div></div>
+<div><div class="ds-swatch" style="background:var(--pw-muted-color);"></div><div class="uk-text-small uk-margin-small-top"><strong>Muted</strong><br><span class="ds-var">--pw-muted-color</span></div></div>
+<div><div class="ds-swatch" style="background:var(--pw-border-color);"></div><div class="uk-text-small uk-margin-small-top"><strong>Border</strong><br><span class="ds-var">--pw-border-color</span></div></div>
+<div><div class="ds-swatch" style="background:var(--pw-main-background);"></div><div class="uk-text-small uk-margin-small-top"><strong>Main Background</strong><br><span class="ds-var">--pw-main-background</span><br>light:#eee / dark:#222</div></div>
+<div><div class="ds-swatch" style="background:var(--pw-inputs-background);"></div><div class="uk-text-small uk-margin-small-top"><strong>Inputs Background</strong><br><span class="ds-var">--pw-inputs-background</span><br>light:#f8f8f8 / dark:#161616</div></div>
+<div><div class="ds-swatch" style="background:var(--pw-blocks-background);"></div><div class="uk-text-small uk-margin-small-top"><strong>Blocks Background</strong><br><span class="ds-var">--pw-blocks-background</span><br>light:#fff / dark:#000</div></div>
+<div><div class="ds-swatch" style="background:var(--pw-code-background);"></div><div class="uk-text-small uk-margin-small-top"><strong>Code Background</strong><br><span class="ds-var">--pw-code-background</span></div></div>
+</div>
+<div class="ds-section-label uk-margin-top">Alert Colors</div>
+<div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
+<div><div class="ds-swatch" style="background:var(--pw-alert-primary);"></div><div class="uk-text-small uk-margin-small-top"><strong>Primary</strong><br><span class="ds-var">--pw-alert-primary</span></div></div>
+<div><div class="ds-swatch" style="background:var(--pw-alert-success);"></div><div class="uk-text-small uk-margin-small-top"><strong>Success</strong><br><span class="ds-var">--pw-alert-success</span></div></div>
+<div><div class="ds-swatch" style="background:var(--pw-alert-warning);"></div><div class="uk-text-small uk-margin-small-top"><strong>Warning</strong><br><span class="ds-var">--pw-alert-warning</span></div></div>
+<div><div class="ds-swatch" style="background:var(--pw-alert-danger);"></div><div class="uk-text-small uk-margin-small-top"><strong>Danger</strong><br><span class="ds-var">--pw-alert-danger</span></div></div>
+</div>
+<div class="ds-section-label uk-margin-top">Button &amp; Shape Tokens</div>
+<div class="uk-overflow-auto"><table class="uk-table uk-table-divider uk-table-justify uk-table-small">
+<thead><tr><th>Token</th><th>Light</th><th>Dark</th></tr></thead>
+<tbody>
+<tr><td><code>--pw-button-radius</code></td><td colspan="2">99999px (pill)</td></tr>
+<tr><td><code>--pw-input-radius</code></td><td colspan="2">0 (sharp)</td></tr>
+<tr><td><code>--pw-button-background</code></td><td>var(--pw-text-color)</td><td>var(--pw-main-color)</td></tr>
+<tr><td><code>--pw-button-color</code></td><td>var(--pw-blocks-background)</td><td>var(--pw-text-color)</td></tr>
+<tr><td><code>--pw-button-hover-background</code></td><td>var(--pw-main-color)</td><td>var(--pw-text-color)</td></tr>
+<tr><td><code>--pw-button-muted-background</code></td><td>#737373</td><td>#404040</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="typography" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Typography</h2>
+<p class="uk-text-muted">UIkit heading classes. Font: <strong>Inter</strong> (400, 600). Loaded as WOFF2 from <code>themes/default/fonts/</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<h1 class="uk-h1">uk-h1 — Page Title</h1>
+<h2 class="uk-h2">uk-h2 — Section Heading</h2>
+<h3 class="uk-h3">uk-h3 — Subsection</h3>
+<h4 class="uk-h4">uk-h4 — Inputfield Group</h4>
+<h5 class="uk-h5">uk-h5 — Small Heading</h5>
+<h6 class="uk-h6">uk-h6 — Micro Heading</h6>
+<hr class="uk-hr">
+<p>Body text — field descriptions and general content.</p>
+<p class="uk-text-small uk-text-muted">uk-text-small uk-text-muted — Helper text, field notes.</p>
+<p class="uk-text-lead">uk-text-lead — Intro paragraphs.</p>
+<p class="uk-text-meta">uk-text-meta — Dates, metadata.</p>
+<p><code>$page-&gt;get('title')</code> — Inline code.</p>
+<hr class="uk-hr">
+<div class="ds-section-label">Link Styles</div>
+<p><a class="uk-link-muted" href="#">uk-link-muted</a></p>
+<p><a class="uk-link-text" href="#">uk-link-text</a></p>
+<p><a class="uk-link-heading" href="#">uk-link-heading</a></p>
+<p><span class="uk-link-toggle"><a class="uk-link-text" href="#">uk-link-toggle wrapper</a></span></p>
+</div>
+</section>
+
+<section id="buttons" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Buttons</h2>
+<p class="uk-text-muted">From <code>config.php</code>: sizes × colors. <code>uk-button-large</code> / <code>uk-button-small</code> / <code>uk-button-text</code> / <code>uk-button-link</code> × <code>uk-button-primary</code> / <code>uk-button-secondary</code> / <code>uk-button-default</code> / <code>uk-button-danger</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Large</div>
+<p><a class="uk-button uk-button-large uk-button-primary">Large Primary</a> <a class="uk-button uk-button-large uk-button-secondary">Large Secondary</a> <a class="uk-button uk-button-large uk-button-default">Large Default</a> <a class="uk-button uk-button-large uk-button-danger">Large Danger</a></p>
+<div class="ds-section-label">Default</div>
+<p><button class="uk-button uk-button-primary">Primary</button> <button class="uk-button uk-button-secondary">Secondary</button> <button class="uk-button uk-button-default">Default</button> <button class="uk-button uk-button-danger">Danger</button></p>
+<div class="ds-section-label">Small</div>
+<p><button class="uk-button uk-button-small uk-button-primary">Small Primary</button> <button class="uk-button uk-button-small uk-button-secondary">Small Secondary</button> <button class="uk-button uk-button-small uk-button-default">Small Default</button> <button class="uk-button uk-button-small uk-button-danger">Small Danger</button></p>
+<div class="ds-section-label">Text &amp; Link</div>
+<p><button class="uk-button uk-button-text">Button Text</button> &nbsp; <button class="uk-button uk-button-link">Button Link</button></p>
+<div class="ds-section-label">uk-button-group</div>
+<div class="uk-button-group"><button class="uk-button uk-button-primary">Edit</button><button class="uk-button uk-button-default">View</button><button class="uk-button uk-button-default">Copy</button></div>
+<div class="ds-section-label uk-margin-top">With Icons</div>
+<p><button class="uk-button uk-button-primary"><span uk-icon="icon:plus;ratio:0.8" class="uk-margin-small-right"></span>Add New</button> <button class="uk-button uk-button-default"><span uk-icon="icon:download;ratio:0.8" class="uk-margin-small-right"></span>Export</button> <button class="uk-button uk-button-danger uk-button-small"><span uk-icon="icon:trash;ratio:0.7" class="uk-margin-small-right"></span>Delete</button></p>
+
+<div class="ds-section-label uk-margin-top">Save Button with Dropdown (pw-button-dropdown-wrap)</div>
+<p class="uk-text-muted uk-text-small">From <code>ProcessPageEdit</code>: <code>pw-head-button</code> + <code>pw-button-dropdown-toggle</code>. The split button pattern used on page edit forms.</p>
+<div class="uk-margin-small-top">
+<span class="pw-button-dropdown-wrap">
+  <button class="pw-head-button" type="button"><span>Save</span></button><button class="pw-button-dropdown-toggle" type="button"><i class="fa fa-angle-down" style="font-style:normal;">▾</i></button>
+</span>
+</div>
+<div class="uk-margin-small-top">
+<span class="pw-button-dropdown-wrap">
+  <button class="pw-head-button" type="button"><span>Save + Keep Editing</span></button><button class="pw-button-dropdown-toggle" type="button"><i class="fa fa-angle-down" style="font-style:normal;">▾</i></button>
+</span>
+</div>
+<div class="ds-section-label uk-margin-top">Dropdown Actions (pw-button-dropdown)</div>
+<div class="uk-inline uk-margin-small-top">
+<span class="pw-button-dropdown-wrap">
+  <button class="pw-head-button" type="button">Save</button><button class="pw-button-dropdown-toggle" type="button" id="ds-save-dd-toggle">▾</button>
+</span>
+<div uk-dropdown="mode: click; pos: bottom-right">
+<ul class="uk-nav uk-dropdown-nav">
+<li><a href="#"><span uk-icon="icon:close;ratio:0.8" class="uk-margin-small-right"></span>Save + Exit</a></li>
+<li><a href="#"><span uk-icon="icon:eye;ratio:0.8" class="uk-margin-small-right"></span>Save + View</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="forms" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Form Elements</h2>
+<p class="uk-text-muted">From <code>setClasses()</code>: <code>uk-input</code>, <code>uk-select</code>, <code>uk-textarea</code>, <code>uk-checkbox</code>, <code>uk-radio</code>. Sizes: <code>uk-form-small</code>, <code>uk-form-large</code>. Widths: <code>uk-form-width-medium</code>, <code>uk-form-width-small</code>, <code>uk-form-width-xsmall</code>, <code>uk-form-width-large</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<form class="uk-form-stacked">
+<div class="uk-margin"><label class="uk-form-label">uk-input</label><div class="uk-form-controls"><input class="uk-input" type="text" placeholder="Page title..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-small</label><div class="uk-form-controls"><input class="uk-input uk-form-small" type="text" placeholder="Small..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-large</label><div class="uk-form-controls"><input class="uk-input uk-form-large" type="text" placeholder="Large..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-medium (select)</label><div class="uk-form-controls"><select class="uk-select uk-form-medium uk-form-width-medium"><option>Medium size select</option></select></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-width-medium (password)</label><div class="uk-form-controls"><input class="uk-input uk-form-width-medium" type="password" value="secret"></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-blank</label><div class="uk-form-controls"><input class="uk-input uk-form-blank" type="text" placeholder="Borderless..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-select</label><div class="uk-form-controls"><select class="uk-select"><option>Template: basic-page</option><option>Template: home</option><option>Template: blog-post</option></select></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-select uk-form-small</label><div class="uk-form-controls"><select class="uk-select uk-form-small uk-form-width-small"><option>Published</option><option>Hidden</option><option>Unpublished</option></select></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-textarea</label><div class="uk-form-controls"><textarea class="uk-textarea" rows="4" placeholder="Body text..."></textarea></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-checkbox</label><div class="uk-form-controls uk-form-controls-text"><label><input class="uk-checkbox" type="checkbox" checked> Published</label><br><label><input class="uk-checkbox" type="checkbox"> Hidden</label><br><label><input class="uk-checkbox" type="checkbox"> Locked</label></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-radio</label><div class="uk-form-controls uk-form-controls-text"><label><input class="uk-radio" type="radio" name="status" checked> Active</label><br><label><input class="uk-radio" type="radio" name="status"> Draft</label><br><label><input class="uk-radio" type="radio" name="status"> Trash</label></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-range</label><div class="uk-form-controls"><input class="uk-range" type="range" value="50" min="0" max="100"></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-icon</label><div class="uk-form-controls"><div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon:search"></span><input class="uk-input" type="text" placeholder="Search pages..."></div></div></div>
+</form>
+<div class="ds-section-label uk-margin-top">uk-placeholder</div>
+<div class="uk-placeholder uk-text-center"><span uk-icon="icon:cloud-upload;ratio:2"></span><p class="uk-text-muted">Drag and drop or <a href="#">browse</a>.</p></div>
+
+<div class="ds-section-label uk-margin-top">Validation States</div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-danger</label><div class="uk-form-controls"><input class="uk-input uk-form-danger" type="text" value="Invalid value"></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-success</label><div class="uk-form-controls"><input class="uk-input uk-form-success" type="text" value="Valid value"></div></div>
+
+<div class="ds-section-label uk-margin-top">Horizontal Layout (uk-form-horizontal)</div>
+<form class="uk-form-horizontal uk-margin-small">
+<div class="uk-margin"><label class="uk-form-label">Title</label><div class="uk-form-controls"><input class="uk-input" type="text" placeholder="Horizontal layout..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">Template</label><div class="uk-form-controls"><select class="uk-select"><option>basic-page</option></select></div></div>
+</form>
+
+<div class="ds-section-label uk-margin-top">Vertical Layout (uk-form-vertical — stacked labels, this is the module default)</div>
+<form class="uk-form-vertical uk-margin-small">
+<div class="uk-margin"><label class="uk-form-label">Title</label><div class="uk-form-controls"><input class="uk-input" type="text" placeholder="Vertical/stacked layout (default)..."></div></div>
+</form>
+
+<div class="ds-section-label uk-margin-top">Fieldset &amp; Legend</div>
+<fieldset class="uk-fieldset">
+<legend class="uk-legend">Page Settings</legend>
+<div class="uk-margin"><input class="uk-input" type="text" placeholder="uk-fieldset + uk-legend"></div>
+</fieldset>
+</div>
+</section>
+
+<section id="labels" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Labels &amp; Badges</h2>
+<p class="uk-text-muted"><code>uk-label</code>, <code>uk-label-success</code>, <code>uk-label-warning</code>, <code>uk-label-danger</code>. <code>uk-badge</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Labels</div>
+<p><span class="uk-label">Default</span> <span class="uk-label uk-label-success">Success</span> <span class="uk-label uk-label-warning">Warning</span> <span class="uk-label uk-label-danger">Danger</span></p>
+<div class="ds-section-label">Badges</div>
+<p><span class="uk-badge">1</span> <span class="uk-badge">24</span> <span class="uk-badge">99+</span></p>
+</div>
+</section>
+
+<section id="alerts" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Alerts</h2>
+<p class="uk-text-muted"><code>uk-alert</code>, <code>uk-alert-primary</code>, <code>uk-alert-success</code>, <code>uk-alert-warning</code>, <code>uk-alert-danger</code>.</p>
+<div class="uk-alert uk-alert-primary" uk-alert><a class="uk-alert-close" uk-close></a><p>Page saved successfully.</p></div>
+<div class="uk-alert uk-alert-success" uk-alert><a class="uk-alert-close" uk-close></a><p>Module installed: InputfieldTinyMCE</p></div>
+<div class="uk-alert uk-alert-warning" uk-alert><a class="uk-alert-close" uk-close></a><p>Page is unpublished.</p></div>
+<div class="uk-alert uk-alert-danger" uk-alert><a class="uk-alert-close" uk-close></a><p>Error: Required field "title" is missing.</p></div>
+<div class="pw-notes"><strong>Note:</strong> Field notes use <code>--pw-notes-background</code>.</div>
+</section>
+
+<section id="tables" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Tables</h2>
+<p class="uk-text-muted">Default: <code>uk-table uk-table-divider uk-table-justify uk-table-small</code>. Extras: <code>uk-table-striped</code>, <code>uk-table-hover</code>.</p>
+<div class="uk-card uk-card-default uk-card-body uk-overflow-auto">
+<div class="ds-section-label">uk-table uk-table-divider uk-table-justify uk-table-small</div>
+<table class="uk-table uk-table-divider uk-table-justify uk-table-small">
+<thead><tr><th>Title</th><th>Template</th><th>Modified</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Home</td><td>home</td><td>2026-01-15</td><td><span class="uk-label" style="font-size:10px;">Published</span></td></tr>
+<tr><td>About</td><td>basic-page</td><td>2026-01-14</td><td><span class="uk-label" style="font-size:10px;">Published</span></td></tr>
+<tr><td>Blog</td><td>blog</td><td>2026-01-12</td><td><span class="uk-label uk-label-warning" style="font-size:10px;">Draft</span></td></tr>
+</tbody>
+</table>
+<div class="ds-section-label uk-margin-top">uk-table-striped uk-table-hover</div>
+<table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+<thead><tr><th>Module</th><th>Version</th><th class="uk-text-right">Actions</th></tr></thead>
+<tbody>
+<tr><td>InputfieldTinyMCE</td><td>0.9.4</td><td class="uk-text-right"><a href="#">Configure</a></td></tr>
+<tr><td>ProcessPageList</td><td>1.2.1</td><td class="uk-text-right"><a href="#">Configure</a></td></tr>
+<tr><td>AdminThemeUikit</td><td>36</td><td class="uk-text-right"><a href="#">Configure</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="tabs" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Tab &amp; Subnav</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-tab</div>
+<ul uk-tab><li class="uk-active"><a href="#">Content</a></li><li><a href="#">Children</a></li><li><a href="#">Settings</a></li><li><a href="#">Delete</a></li><li class="uk-disabled"><a href="#">Disabled</a></li></ul>
+<div class="ds-section-label uk-margin-top">uk-subnav</div>
+<ul class="uk-subnav"><li class="uk-active"><a href="#">All</a></li><li><a href="#">Published</a></li><li><a href="#">Unpublished</a></li><li><a href="#">Trash</a></li></ul>
+<div class="ds-section-label uk-margin-top">uk-subnav uk-subnav-pill</div>
+<ul class="uk-subnav uk-subnav-pill"><li class="uk-active"><a href="#">All</a></li><li><a href="#">Published</a></li><li><a href="#">Unpublished</a></li></ul>
+<div class="ds-section-label uk-margin-top">uk-subnav uk-subnav-divider</div>
+<ul class="uk-subnav uk-subnav-divider"><li class="uk-active"><a href="#">List</a></li><li><a href="#">Grid</a></li><li><a href="#">Table</a></li></ul>
+
+<div class="ds-section-label uk-margin-top">uk-tab (uk-tab-left)</div>
+<div uk-grid>
+<div class="uk-width-auto"><ul class="uk-tab-left" uk-tab><li class="uk-active"><a href="#">Content</a></li><li><a href="#">Settings</a></li><li><a href="#">Delete</a></li></ul></div>
+<div class="uk-width-expand"><p class="uk-text-muted">Vertical tab left — <code>uk-tab-left</code></p></div>
+</div>
+
+<div class="ds-section-label uk-margin-top">Dotnav (uk-dotnav)</div>
+<ul class="uk-dotnav"><li class="uk-active"><a href="#">Item 1</a></li><li><a href="#">Item 2</a></li><li><a href="#">Item 3</a></li><li><a href="#">Item 4</a></li></ul>
+
+<div class="ds-section-label uk-margin-top">Iconnav (uk-iconnav)</div>
+<ul class="uk-iconnav"><li><a href="#" uk-icon="icon:plus"></a></li><li><a href="#" uk-icon="icon:file-edit"></a></li><li><a href="#" uk-icon="icon:copy"></a></li><li><a href="#" uk-icon="icon:trash"></a></li></ul>
+</div>
+</section>
+
+<section id="cards" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Cards</h2>
+<div class="uk-child-width-1-3@m" uk-grid>
+<div><div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Default</h3><p class="uk-text-small uk-text-muted">uk-card-default</p></div></div>
+<div><div class="uk-card uk-card-primary uk-card-body"><h3 class="uk-card-title">Primary</h3><p class="uk-text-small">uk-card-primary</p></div></div>
+<div><div class="uk-card uk-card-secondary uk-card-body"><h3 class="uk-card-title">Secondary</h3><p class="uk-text-small">uk-card-secondary</p></div></div>
+<div><div class="uk-card uk-card-muted uk-card-body"><h3 class="uk-card-title">Muted</h3><p class="uk-text-small uk-text-muted">uk-card-muted</p></div></div>
+<div><div class="uk-card uk-card-default uk-card-hover uk-card-body"><h3 class="uk-card-title">Hover</h3><p class="uk-text-small uk-text-muted">uk-card-hover</p></div></div>
+<div><div class="uk-card uk-card-default uk-card-small uk-card-body"><h3 class="uk-card-title">Small</h3><p class="uk-text-small uk-text-muted">uk-card-small</p></div></div>
+</div>
+
+<div class="ds-section-label uk-margin-top">Card with Header, Footer &amp; Badge</div>
+<div class="uk-width-1-2@m">
+<div class="uk-card uk-card-default">
+<div class="uk-card-badge uk-label">New</div>
+<div class="uk-card-header"><h3 class="uk-card-title">Card Header</h3></div>
+<div class="uk-card-body"><p>Card with <code>uk-card-header</code>, <code>uk-card-body</code>, <code>uk-card-footer</code>, and <code>uk-card-badge</code>.</p></div>
+<div class="uk-card-footer"><a class="uk-button uk-button-text">Read more</a></div>
+</div>
+</div>
+</section>
+
+<section id="accordion" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Accordion</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<ul uk-accordion>
+<li class="uk-open"><a class="uk-accordion-title" href>Field: Title</a><div class="uk-accordion-content"><input class="uk-input" type="text" value="Home Page"></div></li>
+<li><a class="uk-accordion-title" href>Field: Body</a><div class="uk-accordion-content"><textarea class="uk-textarea" rows="3">Rich text...</textarea></div></li>
+<li><a class="uk-accordion-title" href>Field: SEO</a><div class="uk-accordion-content"><input class="uk-input" type="text" placeholder="Meta description..."></div></li>
+</ul>
+</div>
+</section>
+
+<section id="nav" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Nav</h2>
+<p class="uk-text-muted"><code>uk-nav uk-nav-default</code>, <code>uk-nav-header</code>, <code>uk-nav-divider</code>, <code>uk-nav-sub</code>, <code>uk-parent</code>, <code>uk-nav-parent-icon</code>.</p>
+<div class="uk-card uk-card-default uk-card-body" style="max-width:300px;">
+<ul class="uk-nav uk-nav-default uk-nav-parent-icon" uk-nav>
+<li class="uk-nav-header">Pages</li>
+<li class="uk-active"><a href="#"><span uk-icon="icon:home;ratio:0.8" class="uk-margin-small-right"></span>Home</a></li>
+<li class="uk-parent"><a href="#"><span uk-icon="icon:folder;ratio:0.8" class="uk-margin-small-right"></span>About</a><ul class="uk-nav-sub"><li><a href="#">Team</a></li><li><a href="#">History</a></li></ul></li>
+<li><a href="#"><span uk-icon="icon:file-text;ratio:0.8" class="uk-margin-small-right"></span>Blog</a></li>
+<li><a href="#"><span uk-icon="icon:mail;ratio:0.8" class="uk-margin-small-right"></span>Contact</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Admin</li>
+<li><a href="#"><span uk-icon="icon:settings;ratio:0.8" class="uk-margin-small-right"></span>Setup</a></li>
+<li><a href="#"><span uk-icon="icon:plugin;ratio:0.8" class="uk-margin-small-right"></span>Modules</a></li>
+<li><a href="#"><span uk-icon="icon:users;ratio:0.8" class="uk-margin-small-right"></span>Access</a></li>
+</ul>
+</div>
+
+<div class="ds-section-label uk-margin-top">uk-nav uk-nav-primary</div>
+<div class="uk-card uk-card-default uk-card-body" style="max-width:300px;">
+<ul class="uk-nav uk-nav-primary uk-nav-parent-icon" uk-nav>
+<li class="uk-active"><a href="#">Home</a></li>
+<li class="uk-parent"><a href="#">About</a><ul class="uk-nav-sub"><li><a href="#">Team</a></li></ul></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+
+<div class="ds-section-label uk-margin-top">uk-nav-center</div>
+<div class="uk-card uk-card-default uk-card-body" style="max-width:300px;">
+<ul class="uk-nav uk-nav-default uk-nav-center">
+<li class="uk-active"><a href="#">Centered</a></li>
+<li><a href="#">Nav Item</a></li>
+<li><a href="#">Nav Item</a></li>
+</ul>
+</div>
+</section>
+
+<section id="icons" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Icons</h2>
+<p class="uk-text-muted"><code>uk-icon</code>, <code>uk-icon-button</code>, <code>uk-icon-link</code>, <code>uk-svg</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Common Admin Icons</div>
+<div class="uk-child-width-auto uk-flex-wrap" uk-grid="margin: uk-margin-small">
+<div class="uk-text-center"><span uk-icon="icon:home;ratio:1.2"></span><div class="uk-text-small uk-text-muted">home</div></div>
+<div class="uk-text-center"><span uk-icon="icon:cog;ratio:1.2"></span><div class="uk-text-small uk-text-muted">cog</div></div>
+<div class="uk-text-center"><span uk-icon="icon:users;ratio:1.2"></span><div class="uk-text-small uk-text-muted">users</div></div>
+<div class="uk-text-center"><span uk-icon="icon:search;ratio:1.2"></span><div class="uk-text-small uk-text-muted">search</div></div>
+<div class="uk-text-center"><span uk-icon="icon:plus;ratio:1.2"></span><div class="uk-text-small uk-text-muted">plus</div></div>
+<div class="uk-text-center"><span uk-icon="icon:trash;ratio:1.2"></span><div class="uk-text-small uk-text-muted">trash</div></div>
+<div class="uk-text-center"><span uk-icon="icon:pencil;ratio:1.2"></span><div class="uk-text-small uk-text-muted">pencil</div></div>
+<div class="uk-text-center"><span uk-icon="icon:check;ratio:1.2"></span><div class="uk-text-small uk-text-muted">check</div></div>
+<div class="uk-text-center"><span uk-icon="icon:close;ratio:1.2"></span><div class="uk-text-small uk-text-muted">close</div></div>
+<div class="uk-text-center"><span uk-icon="icon:warning;ratio:1.2"></span><div class="uk-text-small uk-text-muted">warning</div></div>
+<div class="uk-text-center"><span uk-icon="icon:info;ratio:1.2"></span><div class="uk-text-small uk-text-muted">info</div></div>
+<div class="uk-text-center"><span uk-icon="icon:bolt;ratio:1.2"></span><div class="uk-text-small uk-text-muted">bolt</div></div>
+<div class="uk-text-center"><span uk-icon="icon:folder;ratio:1.2"></span><div class="uk-text-small uk-text-muted">folder</div></div>
+<div class="uk-text-center"><span uk-icon="icon:image;ratio:1.2"></span><div class="uk-text-small uk-text-muted">image</div></div>
+<div class="uk-text-center"><span uk-icon="icon:download;ratio:1.2"></span><div class="uk-text-small uk-text-muted">download</div></div>
+<div class="uk-text-center"><span uk-icon="icon:upload;ratio:1.2"></span><div class="uk-text-small uk-text-muted">upload</div></div>
+<div class="uk-text-center"><span uk-icon="icon:copy;ratio:1.2"></span><div class="uk-text-small uk-text-muted">copy</div></div>
+<div class="uk-text-center"><span uk-icon="icon:move;ratio:1.2"></span><div class="uk-text-small uk-text-muted">move</div></div>
+</div>
+<div class="ds-section-label uk-margin-top">Icon Variants</div>
+<p>
+<a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="icon:heart;ratio:1.2" uk-tooltip="uk-icon-link"></a>
+<a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="icon:star;ratio:1.2"></a>
+<a href="#" class="uk-icon-button uk-margin-small-right" uk-icon="icon:pencil" uk-tooltip="uk-icon-button"></a>
+<a href="#" class="uk-icon-button uk-margin-small-right" uk-icon="icon:link"></a>
+<a href="#" class="uk-icon-button" uk-icon="icon:settings"></a>
+</p>
+<div class="ds-section-label uk-margin-top">Spinner</div>
+<p><span uk-spinner="ratio:1"></span> <span class="uk-text-small uk-text-muted uk-margin-small-left">uk-spinner</span></p>
+</div>
+</section>
+
+<section id="progress" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Progress</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<progress class="uk-progress" value="70" max="100"></progress>
+<progress class="uk-progress" value="40" max="100"></progress>
+<progress class="uk-progress" value="100" max="100"></progress>
+</div>
+</section>
+
+<section id="lists" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Lists</h2>
+<p class="uk-text-muted"><code>uk-list</code> with variants: <code>uk-list-divider</code>, <code>uk-list-striped</code>, <code>uk-list-bullet</code>, <code>uk-list-disc</code>, <code>uk-list-circle</code>, <code>uk-list-square</code>, <code>uk-list-hyphen</code>, <code>uk-list-decimal</code>, <code>uk-list-muted</code>, <code>uk-list-emphasis</code>, <code>uk-list-primary</code>, <code>uk-list-secondary</code>, <code>uk-list-large</code>, <code>uk-list-collapse</code>.</p>
+<div class="uk-child-width-1-3@m" uk-grid>
+<div><div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-list uk-list-divider</div>
+<ul class="uk-list uk-list-divider"><li>Home</li><li>About Us</li><li>Blog</li><li>Contact</li></ul>
+</div></div>
+<div><div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-list uk-list-striped</div>
+<ul class="uk-list uk-list-striped"><li>Home</li><li>About Us</li><li>Blog</li><li>Contact</li></ul>
+</div></div>
+<div><div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-list uk-list-bullet</div>
+<ul class="uk-list uk-list-bullet"><li>Home</li><li>About Us</li><li>Blog</li><li>Contact</li></ul>
+</div></div>
+<div><div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-list-disc / uk-list-circle / uk-list-square</div>
+<ul class="uk-list uk-list-disc"><li>Disc item</li><li>Disc item</li></ul>
+<ul class="uk-list uk-list-circle"><li>Circle item</li><li>Circle item</li></ul>
+<ul class="uk-list uk-list-square"><li>Square item</li><li>Square item</li></ul>
+</div></div>
+<div><div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-list-hyphen / uk-list-decimal</div>
+<ul class="uk-list uk-list-hyphen"><li>Hyphen item</li><li>Hyphen item</li></ul>
+<ul class="uk-list uk-list-decimal"><li>Decimal item</li><li>Decimal item</li></ul>
+</div></div>
+<div><div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Marker colors</div>
+<ul class="uk-list uk-list-disc uk-list-muted"><li>uk-list-muted</li></ul>
+<ul class="uk-list uk-list-disc uk-list-emphasis"><li>uk-list-emphasis</li></ul>
+<ul class="uk-list uk-list-disc uk-list-primary"><li>uk-list-primary</li></ul>
+<ul class="uk-list uk-list-disc uk-list-secondary"><li>uk-list-secondary</li></ul>
+</div></div>
+</div>
+</section>
+
+<section id="headings" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Heading Styles</h2>
+<p class="uk-text-muted">Decorative heading classes: <code>uk-heading-small</code> through <code>uk-heading-3xlarge</code>. Plus <code>uk-heading-divider</code>, <code>uk-heading-bullet</code>, <code>uk-heading-line</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<h3 class="uk-heading-small">uk-heading-small</h3>
+<h3 class="uk-heading-medium">uk-heading-medium</h3>
+<h3 class="uk-heading-large">uk-heading-large</h3>
+<hr class="uk-hr">
+<h3 class="uk-heading-divider">uk-heading-divider</h3>
+<h3 class="uk-heading-bullet">uk-heading-bullet</h3>
+<h3 class="uk-heading-line"><span>uk-heading-line</span></h3>
+
+<h3 class="uk-heading-xlarge">xlarge</h3>
+<h3 class="uk-heading-2xlarge">2xlarge</h3>
+</div>
+
+<div class="ds-section-label uk-margin-top">Dividers</div>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-divider-icon</div>
+<hr class="uk-divider-icon">
+<div class="ds-section-label">uk-divider-small</div>
+<hr class="uk-divider-small">
+</div>
+</section>
+
+<section id="tiles" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Sections &amp; Tiles</h2>
+<p class="uk-text-muted"><code>uk-section</code> / <code>uk-section-default</code> / <code>uk-section-muted</code> / <code>uk-section-primary</code> / <code>uk-section-secondary</code>. <code>uk-tile</code> variants: <code>uk-tile-default</code> / <code>uk-tile-muted</code> / <code>uk-tile-primary</code> / <code>uk-tile-secondary</code>.</p>
+<div class="uk-child-width-1-2@m" uk-grid>
+<div><div class="uk-tile uk-tile-default uk-padding-small">uk-tile-default<br><span class="uk-text-small uk-text-muted">var(--pw-blocks-background)</span></div></div>
+<div><div class="uk-tile uk-tile-muted uk-padding-small">uk-tile-muted<br><span class="uk-text-small uk-text-muted">var(--pw-main-background)</span></div></div>
+<div><div class="uk-tile uk-tile-primary uk-padding-small" style="color:#fff;">uk-tile-primary<br><span class="uk-text-small" style="opacity:0.8;">var(--pw-main-color)</span></div></div>
+<div><div class="uk-tile uk-tile-secondary uk-padding-small">uk-tile-secondary<br><span class="uk-text-small uk-text-muted">var(--pw-inputs-background)</span></div></div>
+</div>
+<div class="ds-section-label uk-margin-top">Section Sizes</div>
+<p class="uk-text-small uk-text-muted"><code>uk-section-xsmall</code>, <code>uk-section-small</code>, <code>uk-section-large</code>, <code>uk-section-xlarge</code> — control vertical padding.</p>
+</section>
+
+<section id="overlay" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Overlay &amp; Marker</h2>
+<p class="uk-text-muted"><code>uk-overlay</code>, <code>uk-overlay-default</code>, <code>uk-overlay-primary</code>. <code>uk-marker</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="uk-inline uk-width-1-1" style="height:200px; background: var(--pw-main-background);">
+<div class="uk-overlay uk-overlay-primary uk-position-bottom"><p style="color:#fff;">uk-overlay uk-overlay-primary uk-position-bottom</p></div>
+<a href="#" class="uk-position-top-right uk-position-small" uk-marker></a>
+</div>
+<p class="uk-text-small uk-text-muted uk-margin-small-top"><code>uk-marker</code> shown top-right. <code>uk-overlay-default</code> uses <code>--pw-modal-color</code>.</p>
+</div>
+</section>
+
+<section id="dotnav" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Slidenav</h2>
+<p class="uk-text-muted"><code>uk-slidenav</code> for image gallery / slider navigation.</p>
+<div class="uk-card uk-card-default uk-card-body uk-text-center">
+<a href="#" uk-slidenav-previous></a> &nbsp; <a href="#" uk-slidenav-next></a>
+<p class="uk-text-small uk-text-muted uk-margin-small-top">uk-slidenav-previous / uk-slidenav-next</p>
+<a href="#" class="uk-slidenav-large" uk-slidenav-previous></a> &nbsp; <a href="#" class="uk-slidenav-large" uk-slidenav-next></a>
+<p class="uk-text-small uk-text-muted">uk-slidenav-large</p>
+</div>
+</section>
+
+<section id="text-utils" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Text Utilities</h2>
+<p class="uk-text-muted">All <code>uk-text-*</code> classes used in the admin CSS overrides.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Colors</div>
+<p class="uk-text-muted">uk-text-muted</p>
+<p class="uk-text-primary">uk-text-primary</p>
+<p class="uk-text-secondary">uk-text-secondary</p>
+<p class="uk-text-success">uk-text-success</p>
+<p class="uk-text-warning">uk-text-warning</p>
+<p class="uk-text-danger">uk-text-danger</p>
+<p class="uk-text-emphasis">uk-text-emphasis</p>
+<hr class="uk-hr">
+<div class="ds-section-label">Alignment</div>
+<p class="uk-text-left">uk-text-left</p>
+<p class="uk-text-center">uk-text-center</p>
+<p class="uk-text-right">uk-text-right</p>
+<hr class="uk-hr">
+<div class="ds-section-label">Weight &amp; Transform</div>
+<p class="uk-text-bold">uk-text-bold</p>
+<p class="uk-text-light">uk-text-light</p>
+<p class="uk-text-italic">uk-text-italic</p>
+<p class="uk-text-uppercase">uk-text-uppercase</p>
+<p class="uk-text-capitalize">uk-text-capitalize</p>
+<p class="uk-text-lowercase">UK-TEXT-LOWERCASE</p>
+<hr class="uk-hr">
+<div class="ds-section-label">Sizing</div>
+<p class="uk-text-small">uk-text-small</p>
+<p class="uk-text-default">uk-text-default</p>
+<p class="uk-text-large">uk-text-large</p>
+<p class="uk-text-lead">uk-text-lead</p>
+<p class="uk-text-meta">uk-text-meta</p>
+<hr class="uk-hr">
+<div class="ds-section-label">Overflow</div>
+<p class="uk-text-truncate" style="max-width:200px;">uk-text-truncate — This text will be truncated with an ellipsis if too long</p>
+<p class="uk-text-break" style="max-width:200px;">uk-text-break — Superlongwordthatwillbreakifneeded</p>
+<p class="uk-text-nowrap">uk-text-nowrap — This text will never wrap to a new line</p>
+</div>
+</section>
+
+<section id="utility" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Utility Classes</h2>
+<p class="uk-text-muted">Background, visibility, width, flex, grid, and other utility classes used in the admin.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Backgrounds</div>
+<div class="uk-child-width-1-4@m uk-child-width-1-2 uk-text-center" uk-grid>
+<div><div class="uk-background-default uk-padding-small" style="border:1px solid var(--pw-border-color);">uk-background-default</div></div>
+<div><div class="uk-background-muted uk-padding-small">uk-background-muted</div></div>
+<div><div class="uk-background-primary uk-padding-small" style="color:#fff;">uk-background-primary</div></div>
+<div><div class="uk-background-secondary uk-padding-small">uk-background-secondary</div></div>
+</div>
+
+<div class="ds-section-label uk-margin-top">Visibility</div>
+<p class="uk-text-small uk-text-muted"><code>uk-hidden</code>, <code>uk-visible@s</code>, <code>uk-visible@m</code>, <code>uk-visible@l</code>, <code>uk-hidden-hover</code>, <code>uk-invisible</code></p>
+
+<div class="ds-section-label uk-margin-top">Widths (from templates)</div>
+<div uk-grid>
+<div class="uk-width-1-3" style="background:var(--pw-inputs-background);padding:8px;"><code>uk-width-1-3</code></div>
+<div class="uk-width-2-3" style="background:var(--pw-main-background);padding:8px;"><code>uk-width-2-3</code></div>
+</div>
+<div uk-grid class="uk-margin-small-top">
+<div class="uk-width-auto" style="background:var(--pw-inputs-background);padding:8px;"><code>uk-width-auto</code></div>
+<div class="uk-width-expand" style="background:var(--pw-main-background);padding:8px;"><code>uk-width-expand</code></div>
+</div>
+<p class="uk-text-small uk-text-muted uk-margin-small-top">Also: <code>uk-width-1-1</code>, <code>uk-width-1-2</code>, <code>uk-width-1-4</code>, <code>uk-width-1-5</code>, <code>uk-width-1-6</code>, <code>uk-child-width-*</code></p>
+
+<div class="ds-section-label uk-margin-top">Flex</div>
+<div class="uk-flex uk-flex-between uk-flex-middle" style="background:var(--pw-inputs-background);padding:12px;">
+<span>uk-flex-left</span>
+<span>uk-flex-between</span>
+<span>uk-flex-right</span>
+</div>
+<p class="uk-text-small uk-text-muted uk-margin-small-top"><code>uk-flex</code>, <code>uk-flex-middle</code>, <code>uk-flex-center</code>, <code>uk-flex-between</code>, <code>uk-flex-wrap</code>, <code>uk-flex-column</code>, <code>uk-flex-first</code>, <code>uk-flex-last</code></p>
+
+<div class="ds-section-label uk-margin-top">Grid</div>
+<p class="uk-text-small uk-text-muted"><code>uk-grid</code>, <code>uk-grid-small</code>, <code>uk-grid-medium</code>, <code>uk-grid-large</code>, <code>uk-grid-collapse</code>, <code>uk-grid-divider</code>, <code>uk-grid-match</code>, <code>uk-grid-margin</code></p>
+<div class="uk-grid-divider uk-child-width-1-3 uk-text-center" uk-grid>
+<div><code>uk-grid-divider</code></div>
+<div><code>Column 2</code></div>
+<div><code>Column 3</code></div>
+</div>
+
+<div class="ds-section-label uk-margin-top">Other</div>
+<p class="uk-text-small uk-text-muted"><code>uk-clearfix</code>, <code>uk-float-right</code>, <code>uk-float-left</code>, <code>uk-overflow-auto</code>, <code>uk-inline</code>, <code>uk-margin-remove</code>, <code>uk-margin-remove-top</code>, <code>uk-padding-small</code>, <code>uk-logo-inverse</code></p>
+</div>
+</section>
+
+<section id="masthead" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Masthead</h2>
+<p class="uk-text-muted">From <code>_masthead.php</code>: <code>uk-navbar</code>, <code>uk-navbar-container</code>, <code>uk-navbar-transparent</code>, <code>uk-container uk-container-expand</code>, <code>uk-navbar-left</code>, <code>uk-navbar-right</code>, <code>uk-navbar-nav</code>, <code>uk-logo</code>.</p>
+<div class="ds-section-label">Default</div>
+<div class="pw-masthead" style="border-radius:6px;overflow:hidden;">
+<div class="uk-container uk-container-expand">
+<nav class="uk-navbar uk-navbar-container uk-navbar-transparent" uk-navbar>
+<div class="uk-navbar-left"><a class="uk-logo uk-margin-right" href="#" style="color:var(--pw-masthead-logo-color);"><span uk-icon="icon:bolt;ratio:1.3"></span></a><ul class="uk-navbar-nav"><li class="uk-active"><a href="#">Pages</a></li><li><a href="#">Setup</a></li><li><a href="#">Modules</a></li><li><a href="#">Access</a></li></ul></div>
+<div class="uk-navbar-right"><div class="uk-navbar-item"><div class="uk-search uk-search-default"><span uk-search-icon></span><input class="uk-search-input" type="search" placeholder="Search..."></div></div><ul class="uk-navbar-nav"><li><a href="#"><span uk-icon="icon:user"></span> Admin</a></li></ul></div>
+</nav></div></div>
+<div class="ds-section-label uk-margin-top">Colored Masthead Variant</div>
+<div class="pw-masthead" style="border-radius:6px;overflow:hidden;--pw-masthead-background:var(--pw-main-color);--pw-masthead-active-color:#fff;--pw-masthead-text-color:rgba(255,255,255,0.8);--pw-masthead-logo-color:#fff;--pw-masthead-input-background:rgba(255,255,255,0.15);--pw-masthead-input-color:#fff;--pw-masthead-input-border:rgba(255,255,255,0.3);">
+<div class="uk-container uk-container-expand"><nav class="uk-navbar uk-navbar-container uk-navbar-transparent" uk-navbar><div class="uk-navbar-left"><a class="uk-logo uk-margin-right" href="#" style="color:var(--pw-masthead-logo-color);"><span uk-icon="icon:bolt;ratio:1.3"></span></a><ul class="uk-navbar-nav"><li class="uk-active"><a href="#">Pages</a></li><li><a href="#">Setup</a></li><li><a href="#">Modules</a></li></ul></div><div class="uk-navbar-right"><div class="uk-navbar-item"><div class="uk-search uk-search-default"><span uk-search-icon></span><input class="uk-search-input" type="search" placeholder="Search..."></div></div></div></nav></div></div>
+</section>
+
+<section id="breadcrumb" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Breadcrumb</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<ul class="uk-breadcrumb"><li><a href="#">Pages</a></li><li><a href="#">Home</a></li><li><a href="#">Blog</a></li><li><span>Edit: First Post</span></li></ul>
+</div>
+</section>
+
+<section id="inputfields" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Inputfield Wrappers</h2>
+<p class="uk-text-muted">PW core pattern. Header: <code>--pw-inputs-background</code>. Bold variant (<code>useBoldItemHeaders</code>): <code>--pw-main-color</code> background.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="pw-inputfield"><div class="pw-inputfield-header" onclick="this.parentElement.classList.toggle('collapsed')">Title <span uk-icon="icon:chevron-down;ratio:0.7" class="uk-float-right"></span></div><div class="pw-inputfield-content"><input class="uk-input" type="text" value="Home Page"></div></div>
+<div class="pw-inputfield"><div class="pw-inputfield-header" onclick="this.parentElement.classList.toggle('collapsed')">Body <span uk-icon="icon:chevron-down;ratio:0.7" class="uk-float-right"></span></div><div class="pw-inputfield-content"><textarea class="uk-textarea" rows="3">Rich text...</textarea></div></div>
+<div class="pw-inputfield collapsed"><div class="pw-inputfield-header" onclick="this.parentElement.classList.toggle('collapsed')">SEO Settings <span uk-icon="icon:chevron-down;ratio:0.7" class="uk-float-right"></span></div><div class="pw-inputfield-content"><input class="uk-input" type="text" placeholder="Meta description..."></div></div>
+<div class="ds-section-label uk-margin-top">Bold Header (useBoldItemHeaders)</div>
+<div class="pw-inputfield"><div class="pw-inputfield-header pw-bold" onclick="this.parentElement.classList.toggle('collapsed')">Repeater: Slide 1 <span uk-icon="icon:chevron-down;ratio:0.7" class="uk-float-right"></span></div><div class="pw-inputfield-content"><input class="uk-input" type="text" value="Hero Banner"></div></div>
+<div class="pw-inputfield"><div class="pw-inputfield-header pw-bold" onclick="this.parentElement.classList.toggle('collapsed')">Repeater: Slide 2 <span uk-icon="icon:chevron-down;ratio:0.7" class="uk-float-right"></span></div><div class="pw-inputfield-content"><input class="uk-input" type="text" value="Features"></div></div>
+</div>
+</section>
+
+<section id="modals" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Modal</h2>
+<p class="uk-text-muted"><code>uk-modal-dialog</code>, <code>uk-modal-header</code>, <code>uk-modal-body</code>, <code>uk-modal-footer</code>, <code>uk-modal-title</code>, <code>uk-modal-close-default</code>.</p>
+<button class="uk-button uk-button-default" uk-toggle="target:#ds-modal-demo">Open Modal</button>
+<div id="ds-modal-demo" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default" type="button" uk-close></button><div class="uk-modal-header"><h2 class="uk-modal-title">Confirm Delete</h2></div><div class="uk-modal-body"><p>Are you sure you want to delete this page?</p></div><div class="uk-modal-footer uk-text-right"><button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button> <button class="uk-button uk-button-danger uk-modal-close">Delete</button></div></div></div>
+<button class="uk-button uk-button-default uk-margin-small-left" uk-toggle="target:#ds-modal-ld">Light/Dark Dialog</button>
+<div id="ds-modal-ld" uk-modal><div class="uk-modal-dialog uk-modal-body"><h2 class="uk-modal-title">Light/dark mode</h2><p><label><input class="uk-radio" type="radio" name="mode2" checked> Light mode</label>&nbsp;&nbsp;<label><input class="uk-radio" type="radio" name="mode2"> Dark mode</label>&nbsp;&nbsp;<label><input class="uk-radio" type="radio" name="mode2"> Auto</label></p><p class="uk-text-right"><button class="uk-button uk-button-default uk-modal-close">Cancel</button> <button class="uk-button uk-button-primary uk-modal-close">Ok</button></p></div></div>
+</section>
+
+<section id="offcanvas" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Offcanvas</h2>
+<p class="uk-text-muted"><code>uk-offcanvas</code>, <code>uk-offcanvas-bar</code>. From <code>_offcanvas.php</code>.</p>
+<button class="uk-button uk-button-default" uk-toggle="target:#ds-oc">Open Offcanvas</button>
+<div id="ds-oc" uk-offcanvas><div class="uk-offcanvas-bar"><button class="uk-offcanvas-close" type="button" uk-close></button><ul class="uk-nav uk-nav-default uk-nav-parent-icon" uk-nav><li class="uk-nav-header">Pages</li><li class="uk-active"><a href="#">Home</a></li><li class="uk-parent"><a href="#">About</a><ul class="uk-nav-sub"><li><a href="#">Team</a></li></ul></li><li><a href="#">Blog</a></li><li class="uk-nav-divider"></li><li class="uk-nav-header">Admin</li><li><a href="#">Setup</a></li><li><a href="#">Modules</a></li></ul></div></div>
+</section>
+
+<section id="notifications" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Notifications</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<p>
+<button class="uk-button uk-button-default uk-button-small" onclick="UIkit.notification({message:'Page saved',status:'primary'})">Primary</button>
+<button class="uk-button uk-button-default uk-button-small" onclick="UIkit.notification({message:'Module installed',status:'success'})">Success</button>
+<button class="uk-button uk-button-default uk-button-small" onclick="UIkit.notification({message:'Page unpublished',status:'warning'})">Warning</button>
+<button class="uk-button uk-button-default uk-button-small" onclick="UIkit.notification({message:'Field missing',status:'danger'})">Danger</button>
+</p>
+</div>
+</section>
+
+<section id="pagination" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Pagination</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<ul class="uk-pagination" uk-margin><li><a href="#"><span uk-pagination-previous></span></a></li><li><a href="#">1</a></li><li class="uk-disabled"><span>...</span></li><li><a href="#">4</a></li><li class="uk-active"><span>5</span></li><li><a href="#">6</a></li><li class="uk-disabled"><span>...</span></li><li><a href="#">12</a></li><li><a href="#"><span uk-pagination-next></span></a></li></ul>
+</div>
+</section>
+
+<section id="description-list" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Description List</h2>
+<p class="uk-text-muted">From <code>setClasses()</code>: <code>uk-description-list uk-description-list-divider</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<dl class="uk-description-list uk-description-list-divider">
+<dt>Template</dt><dd>basic-page</dd>
+<dt>Parent</dt><dd>/home/about/</dd>
+<dt>Created</dt><dd>2026-01-10 14:30</dd>
+<dt>Modified</dt><dd>2026-01-15 09:22</dd>
+<dt>Created By</dt><dd>admin</dd>
+</dl>
+</div>
+</section>
+
+<section id="dropdown" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Dropdown &amp; Navbar Dropdown</h2>
+<p class="uk-text-muted"><code>uk-dropdown</code>, <code>uk-dropdown-nav</code>. Navbar: <code>uk-navbar-dropdown</code>, <code>uk-navbar-dropdown-nav</code>, <code>uk-navbar-toggle</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-dropdown</div>
+<div class="uk-inline">
+<button class="uk-button uk-button-default">Dropdown <span uk-icon="icon:triangle-down"></span></button>
+<div uk-dropdown>
+<ul class="uk-nav uk-dropdown-nav">
+<li class="uk-active"><a href="#">Active</a></li>
+<li><a href="#">Edit</a></li>
+<li><a href="#">Duplicate</a></li>
+<li class="uk-nav-divider"></li>
+<li><a href="#">Delete</a></li>
+</ul>
+</div>
+</div>
+
+<div class="ds-section-label uk-margin-top">Navbar Dropdown</div>
+<nav class="uk-navbar uk-navbar-container" uk-navbar style="border-radius:6px;">
+<div class="uk-navbar-left">
+<ul class="uk-navbar-nav">
+<li><a href="#">Pages</a>
+<div class="uk-navbar-dropdown">
+<ul class="uk-nav uk-navbar-dropdown-nav">
+<li class="uk-active"><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Blog</a></li>
+<li class="uk-nav-divider"></li>
+<li><a href="#">Add New</a></li>
+</ul>
+</div>
+</li>
+<li><a href="#">Setup</a></li>
+</ul>
+</div>
+<div class="uk-navbar-right">
+<a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+</div>
+</nav>
+</div>
+</section>
+
+<section id="lightbox" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Lightbox</h2>
+<p class="uk-text-muted"><code>uk-lightbox</code> — used for image fields in the admin. Supports <code>uk-lightbox-toolbar</code>, <code>uk-lightbox-button</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div uk-lightbox>
+<a class="uk-button uk-button-default" href="https://picsum.photos/800/600?1" data-caption="Image 1">Open Lightbox</a>
+</div>
+<p class="uk-text-small uk-text-muted uk-margin-small-top">Click to open. Uses UIkit's built-in lightbox with <code>uk-lightbox</code> attribute.</p>
+</div>
+</section>
+
+<section id="search" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Search</h2>
+<p class="uk-text-muted"><code>uk-search</code>, <code>uk-search-default</code>, <code>uk-search-navbar</code>, <code>uk-search-large</code>, <code>uk-search-input</code>, <code>uk-search-icon</code>, <code>uk-search-toggle</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-search-default (from _search-form.php)</div>
+<div class="uk-search uk-search-default uk-width-1-1"><span uk-search-icon></span><input class="uk-search-input" type="search" placeholder="Search pages..."></div>
+
+<div class="ds-section-label uk-margin-top">uk-search-navbar</div>
+<div class="uk-search uk-search-navbar uk-width-1-1"><span uk-search-icon></span><input class="uk-search-input" type="search" placeholder="Navbar search..."></div>
+
+<div class="ds-section-label uk-margin-top">uk-search-large</div>
+<div class="uk-search uk-search-large uk-width-1-1"><span uk-search-icon></span><input class="uk-search-input" type="search" placeholder="Large search..."></div>
+
+<div class="ds-section-label uk-margin-top">Toggle</div>
+<a class="uk-search-toggle" href="#" uk-search-icon></a> <span class="uk-text-small uk-text-muted">uk-search-toggle</span>
+</div>
+</section>
+
+<section id="comment" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Comment</h2>
+<p class="uk-text-muted"><code>uk-comment</code>, <code>uk-comment-header</code>, <code>uk-comment-body</code>, <code>uk-comment-meta</code>, <code>uk-comment-primary</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<article class="uk-comment uk-comment-primary">
+<header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+<div class="uk-width-auto"><span uk-icon="icon:user;ratio:2"></span></div>
+<div class="uk-width-expand">
+<h4 class="uk-comment-title uk-margin-remove">Admin User</h4>
+<ul class="uk-comment-meta uk-subnav uk-subnav-divider"><li><a href="#">12 minutes ago</a></li><li><a href="#">Reply</a></li></ul>
+</div>
+</header>
+<div class="uk-comment-body"><p>Comment component used in page edit discussions. <code>uk-comment-primary</code> highlights important comments.</p></div>
+</article>
+</div>
+</section>
+
+<section id="panel" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Panel &amp; Scrollable</h2>
+<p class="uk-text-muted"><code>uk-panel</code>, <code>uk-panel-scrollable</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">uk-panel-scrollable</div>
+<div class="uk-panel uk-panel-scrollable" style="height: 150px;">
+<ul class="uk-list uk-list-divider">
+<li>Page: Home</li><li>Page: About Us</li><li>Page: Services</li><li>Page: Blog</li><li>Page: Blog Post 1</li><li>Page: Blog Post 2</li><li>Page: Blog Post 3</li><li>Page: Contact</li><li>Page: Privacy Policy</li><li>Page: Terms</li><li>Page: Sitemap</li><li>Page: 404</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="accents" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Accent Colors</h2>
+<p class="uk-text-muted">Three presets from <code>ready.php</code>: red (#eb1d61), green (#14ae85), blue (#2380e6). Custom via <code>defaultMainColorCustom</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="uk-flex uk-flex-wrap" style="gap:8px;">
+<button class="ds-accent-btn uk-active" style="background:#eb1d61;" onclick="setAccent('#eb1d61',this)" title="Red"></button>
+<button class="ds-accent-btn" style="background:#14ae85;" onclick="setAccent('#14ae85',this)" title="Green"></button>
+<button class="ds-accent-btn" style="background:#2380e6;" onclick="setAccent('#2380e6',this)" title="Blue"></button>
+<button class="ds-accent-btn" style="background:#9b59b6;" onclick="setAccent('#9b59b6',this)" title="Custom"></button>
+<button class="ds-accent-btn" style="background:#e67e22;" onclick="setAccent('#e67e22',this)" title="Custom"></button>
+</div>
+<p class="uk-text-small uk-text-muted uk-margin-small-top">Click to change <code>--pw-main-color</code> across all components.</p>
+</div>
+</section>
+
+<section id="overrides" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">CSS Overrides &amp; Config</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Colored Masthead</div>
+<div class="ds-code-block">:root {
+  --pw-masthead-background: var(--pw-main-color);
+  --pw-masthead-active-color: white;
+  --pw-masthead-text-color: rgba(255,255,255,0.8);
+  --pw-masthead-border-color: var(--pw-main-background);
+  --pw-masthead-logo-color: white;
+  --pw-masthead-input-background: var(--pw-masthead-background);
+  --pw-masthead-input-color: var(--pw-masthead-active-color);
+  --pw-masthead-input-border: var(--pw-masthead-text-color);
+  --pw-masthead-menu-item-background-hover: rgba(255,255,255,.2);
+}</div>
+<div class="ds-section-label uk-margin-top">Borderless</div>
+<div class="ds-code-block">:root {
+  --pw-border-color: var(--pw-main-background);
+  --pw-inputs-background: var(--pw-blocks-background);
+}</div>
+<div class="ds-section-label uk-margin-top">$config->AdminThemeUikit</div>
+<div class="ds-code-block">$config->AdminThemeUikit = [
+  'style' => 'reno',           // 'reno' | 'rock' | custom .less path
+  'recompile' => false,
+  'compress' => true,
+  'customLessFiles' => ['/site/templates/admin.less'],
+  'customCssFile' => '/site/assets/admin.css',
+  'vars' => ['pw-main-color' => '#2380e6'],
+];</div>
+<div class="ds-section-label uk-margin-top">CSS Toggles (ready.php)</div>
+<p><span class="uk-label">useInputFocus</span> <span class="uk-label">useBoldItemHeaders</span> <span class="uk-label">usePageListButtons</span> <span class="uk-label">useTogcbx</span> <span class="uk-label">noUserMenu</span></p>
+<div class="ds-section-label uk-margin-top">setClasses() — Module Constructor</div>
+<div class="ds-code-block">$this->setClasses([
+  'input'          => 'uk-input',
+  'input-small'    => 'uk-input uk-form-small',
+  'input-checkbox' => 'uk-checkbox',
+  'input-radio'    => 'uk-radio',
+  'input-password' => 'uk-input uk-form-width-medium',
+  'select'         => 'uk-select',
+  'select-asm'     => 'uk-select uk-form-small',
+  'select-small'   => 'uk-select uk-form-small',
+  'textarea'       => 'uk-textarea',
+  'table'          => 'uk-table uk-table-divider uk-table-justify uk-table-small',
+  'dl'             => 'uk-description-list uk-description-list-divider',
+]);</div>
+</div>
+</section>
+
+</div></div></div>
+<div class="ds-theme-fab">
+<button onclick="setTheme('light',this)" title="Light">☀</button>
+<button class="uk-active" onclick="setTheme('auto',this)" title="Auto">◐</button>
+<button onclick="setTheme('dark',this)" title="Dark">☾</button>
+</div>
+<script>
+function setTheme(m,b){document.querySelectorAll('.ds-theme-fab button').forEach(x=>x.classList.remove('uk-active'));if(b)b.classList.add('uk-active');document.body.classList.remove('light-theme','dark-theme');if(m==='light')document.body.classList.add('light-theme');else if(m==='dark')document.body.classList.add('dark-theme');}
+function setAccent(c,b){document.documentElement.style.setProperty('--pw-main-color',c);document.querySelectorAll('.ds-accent-btn').forEach(x=>x.classList.remove('uk-active'));b.classList.add('uk-active');}
+// Close mobile sidebar on nav link click
+document.querySelectorAll('.ds-mob-link').forEach(function(a){a.addEventListener('click',function(){document.getElementById('ds-mob-sidebar').classList.remove('open');document.getElementById('ds-mob-overlay').classList.remove('open');});});
+</script>
+</body>
+</html>
