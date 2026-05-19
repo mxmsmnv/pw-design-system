@@ -1,0 +1,48 @@
+<section id="module-guidelines" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Module Guidelines</h2>
+<p class="uk-text-muted">From <code>themes/default/KONKAT_THEME.md</code>: standard ProcessWire Inputfields inherit the skin automatically. Custom Process module markup should use scoped selectors, UIkit components, and <code>--pw-*</code> variables instead of hardcoded colors.</p>
+<div class="ds-section-label">Preferred Module Form API</div>
+<div class="ds-code-block">$form = $this->modules->get('InputfieldForm');
+
+$f = $this->modules->get('InputfieldText');
+$f->name = 'title';
+$f->label = 'Title';
+$f->required = true;
+$form->add($f);
+
+$fs = $this->modules->get('InputfieldFieldset');
+$fs->label = 'Settings';
+$form->add($fs);
+
+$select = $this->modules->get('InputfieldSelect');
+$select->name = 'status';
+$select->label = 'Status';
+$select->addOptions(['published' => 'Published', 'hidden' => 'Hidden']);
+$fs->add($select);
+
+return $form->render();</div>
+<div class="pw-wrap">
+<h3 class="uk-h4">pw-wrap Panel</h3>
+<p>A custom Process module view can use <code>pw-wrap</code> to get the same panel background, border, spacing, and dark-mode behavior as core admin screens.</p>
+<div class="uk-grid-small uk-child-width-1-2@m" uk-grid>
+<div>
+<div class="uk-card uk-card-default uk-card-body">
+<h4 class="uk-h5">Use Tokens</h4>
+<p class="uk-text-small uk-text-muted">Brand, border, text, background, and alert colors should come from <code>--pw-main-color</code>, <code>--pw-border-color</code>, <code>--pw-text-color</code>, and related variables.</p>
+</div>
+</div>
+<div>
+<div class="uk-card uk-card-default uk-card-body">
+<h4 class="uk-h5">Scope Custom CSS</h4>
+<p class="uk-text-small uk-text-muted">Module-specific CSS should be scoped to a module container, for example <code>.MyModule .status-indicator</code>, so it does not leak into the admin.</p>
+</div>
+</div>
+</div>
+<div class="ds-section-label uk-margin-top">Example</div>
+<div class="ds-code-block">&lt;div class="pw-wrap MyModule"&gt;
+  &lt;h2&gt;My Module&lt;/h2&gt;
+  &lt;p class="pw-text-main-color"&gt;Token-aware highlight&lt;/p&gt;
+  &lt;span class="uk-badge pw-bg-main-color"&gt;Active&lt;/span&gt;
+&lt;/div&gt;</div>
+</div>
+</section>

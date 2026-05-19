@@ -1,0 +1,44 @@
+<section id="forms" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Form Elements</h2>
+<p class="uk-text-muted">From <code>setClasses()</code>: <code>uk-input</code>, <code>uk-select</code>, <code>uk-textarea</code>, <code>uk-checkbox</code>, <code>uk-radio</code>. Sizes: <code>uk-form-small</code>, <code>uk-form-large</code>. Widths: <code>uk-form-width-medium</code>, <code>uk-form-width-small</code>, <code>uk-form-width-xsmall</code>, <code>uk-form-width-large</code>.</p>
+<div class="uk-card uk-card-default uk-card-body">
+<form class="uk-form-stacked">
+<div class="uk-margin"><label class="uk-form-label">uk-input</label><div class="uk-form-controls"><input class="uk-input" type="text" placeholder="Page title..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-small</label><div class="uk-form-controls"><input class="uk-input uk-form-small" type="text" placeholder="Small..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-large</label><div class="uk-form-controls"><input class="uk-input uk-form-large" type="text" placeholder="Large..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-medium (select)</label><div class="uk-form-controls"><select class="uk-select uk-form-medium uk-form-width-medium"><option>Medium size select</option></select></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-width-medium (password)</label><div class="uk-form-controls"><input class="uk-input uk-form-width-medium" type="password" value="secret"></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-input uk-form-blank</label><div class="uk-form-controls"><input class="uk-input uk-form-blank" type="text" placeholder="Borderless..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-select</label><div class="uk-form-controls"><select class="uk-select"><option>Template: basic-page</option><option>Template: home</option><option>Template: blog-post</option></select></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-select uk-form-small</label><div class="uk-form-controls"><select class="uk-select uk-form-small uk-form-width-small"><option>Published</option><option>Hidden</option><option>Unpublished</option></select></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-textarea</label><div class="uk-form-controls"><textarea class="uk-textarea" rows="4" placeholder="Body text..."></textarea></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-checkbox</label><div class="uk-form-controls uk-form-controls-text"><label><input class="uk-checkbox" type="checkbox" checked> Published</label><br><label><input class="uk-checkbox" type="checkbox"> Hidden</label><br><label><input class="uk-checkbox" type="checkbox"> Locked</label></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-radio</label><div class="uk-form-controls uk-form-controls-text"><label><input class="uk-radio" type="radio" name="status" checked> Active</label><br><label><input class="uk-radio" type="radio" name="status"> Draft</label><br><label><input class="uk-radio" type="radio" name="status"> Trash</label></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-range</label><div class="uk-form-controls"><input class="uk-range" type="range" value="50" min="0" max="100"></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-icon</label><div class="uk-form-controls"><div class="uk-inline uk-width-1-1"><span class="uk-form-icon" uk-icon="icon:search"></span><input class="uk-input" type="text" placeholder="Search pages..."></div></div></div>
+</form>
+<div class="ds-section-label uk-margin-top">uk-placeholder</div>
+<div class="uk-placeholder uk-text-center"><span uk-icon="icon:cloud-upload;ratio:2"></span><p class="uk-text-muted">Drag and drop or <a href="#">browse</a>.</p></div>
+
+<div class="ds-section-label uk-margin-top">Validation States</div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-danger</label><div class="uk-form-controls"><input class="uk-input uk-form-danger" type="text" value="Invalid value"></div></div>
+<div class="uk-margin"><label class="uk-form-label">uk-form-success</label><div class="uk-form-controls"><input class="uk-input uk-form-success" type="text" value="Valid value"></div></div>
+
+<div class="ds-section-label uk-margin-top">Horizontal Layout (uk-form-horizontal)</div>
+<form class="uk-form-horizontal uk-margin-small">
+<div class="uk-margin"><label class="uk-form-label">Title</label><div class="uk-form-controls"><input class="uk-input" type="text" placeholder="Horizontal layout..."></div></div>
+<div class="uk-margin"><label class="uk-form-label">Template</label><div class="uk-form-controls"><select class="uk-select"><option>basic-page</option></select></div></div>
+</form>
+
+<div class="ds-section-label uk-margin-top">Vertical Layout (uk-form-vertical — stacked labels, this is the module default)</div>
+<form class="uk-form-vertical uk-margin-small">
+<div class="uk-margin"><label class="uk-form-label">Title</label><div class="uk-form-controls"><input class="uk-input" type="text" placeholder="Vertical/stacked layout (default)..."></div></div>
+</form>
+
+<div class="ds-section-label uk-margin-top">Fieldset &amp; Legend</div>
+<fieldset class="uk-fieldset">
+<legend class="uk-legend">Page Settings</legend>
+<div class="uk-margin"><input class="uk-input" type="text" placeholder="uk-fieldset + uk-legend"></div>
+</fieldset>
+</div>
+</section>

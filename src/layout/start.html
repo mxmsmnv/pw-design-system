@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Maxim Semenov">
+<title>AdminThemeUikit — Design System Reference</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/css/uikit.min.css">
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit-icons.min.js"></script>
+<link rel="stylesheet" href="./assets/css/design-system.css">
+</head>
+<body class="pw">
+
+<!-- Mobile nav toggle -->
+<button class="ds-mobile-toggle uk-hidden@m" onclick="document.getElementById('ds-mob-sidebar').classList.add('open');document.getElementById('ds-mob-overlay').classList.add('open');" type="button">
+<span uk-icon="icon:menu;ratio:1.2"></span>
+</button>
+
+<!-- Mobile overlay -->
+<div id="ds-mob-overlay" class="ds-mobile-overlay" onclick="document.getElementById('ds-mob-sidebar').classList.remove('open');this.classList.remove('open');"></div>
+
+<!-- Mobile sidebar -->
+<div id="ds-mob-sidebar" class="ds-mobile-sidebar">
+<button class="ds-mobile-close" onclick="this.parentElement.classList.remove('open');document.getElementById('ds-mob-overlay').classList.remove('open');">&times;</button>
+<a class="uk-logo" href="#" style="color:var(--pw-masthead-logo-color);display:block;margin-bottom:12px;">
+<span uk-icon="icon:bolt;ratio:1.1"></span> Konkat
+</a>
+<div class="uk-text-small uk-text-muted uk-margin-small-bottom">AdminThemeUikit &middot; v36</div>
+<hr class="uk-hr uk-margin-small">
+<ul class="uk-nav uk-nav-default">
+<li class="uk-nav-header">Foundation</li>
+<li><a href="#accents" class="ds-mob-link">Accent Colors</a></li>
+<li><a href="#colors" class="ds-mob-link">Colors &amp; Tokens</a></li>
+<li><a href="#typography" class="ds-mob-link">Typography</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Components</li>
+<li><a href="#buttons" class="ds-mob-link">Buttons</a></li>
+<li><a href="#forms" class="ds-mob-link">Form Elements</a></li>
+<li><a href="#labels" class="ds-mob-link">Labels &amp; Badges</a></li>
+<li><a href="#alerts" class="ds-mob-link">Alerts</a></li>
+<li><a href="#tables" class="ds-mob-link">Tables</a></li>
+<li><a href="#tabs" class="ds-mob-link">Tab &amp; Subnav</a></li>
+<li><a href="#cards" class="ds-mob-link">Cards</a></li>
+<li><a href="#accordion" class="ds-mob-link">Accordion</a></li>
+<li><a href="#nav" class="ds-mob-link">Nav</a></li>
+<li><a href="#icons" class="ds-mob-link">Icons</a></li>
+<li><a href="#lists" class="ds-mob-link">Lists</a></li>
+<li><a href="#progress" class="ds-mob-link">Progress</a></li>
+<li><a href="#headings" class="ds-mob-link">Heading Styles</a></li>
+<li><a href="#tiles" class="ds-mob-link">Sections &amp; Tiles</a></li>
+<li><a href="#overlay" class="ds-mob-link">Overlay</a></li>
+<li><a href="#text-utils" class="ds-mob-link">Text Utilities</a></li>
+<li><a href="#utility" class="ds-mob-link">Utility Classes</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Patterns</li>
+<li><a href="#masthead" class="ds-mob-link">Masthead</a></li>
+<li><a href="#breadcrumb" class="ds-mob-link">Breadcrumb</a></li>
+<li><a href="#inputfields" class="ds-mob-link">Inputfield Wrappers</a></li>
+<li><a href="#module-guidelines" class="ds-mob-link">Module Guidelines</a></li>
+<li><a href="#modals" class="ds-mob-link">Modal</a></li>
+<li><a href="#offcanvas" class="ds-mob-link">Offcanvas</a></li>
+<li><a href="#dropdown" class="ds-mob-link">Dropdown</a></li>
+<li><a href="#notifications" class="ds-mob-link">Notifications</a></li>
+<li><a href="#pagination" class="ds-mob-link">Pagination</a></li>
+<li><a href="#search" class="ds-mob-link">Search</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Theming</li>
+<li><a href="#overrides" class="ds-mob-link">CSS Overrides</a></li>
+</ul>
+</div>
+
+<div uk-grid class="uk-grid-collapse">
+<aside class="uk-width-medium uk-visible@m" style="position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--pw-blocks-background);border-right:1px solid var(--pw-border-color);">
+<div style="padding:16px 20px;"><a class="uk-logo uk-margin-small-bottom" href="#" style="color:var(--pw-masthead-logo-color);"><span uk-icon="icon:bolt;ratio:1.2"></span> Konkat</a><div class="uk-text-small uk-text-muted">AdminThemeUikit &middot; v36</div></div>
+<hr class="uk-hr uk-margin-remove">
+<ul class="uk-nav uk-nav-default uk-margin-small-top">
+<li class="uk-nav-header">Foundation</li>
+<li><a href="#accents"><span uk-icon="icon:paint-bucket;ratio:0.8" class="uk-margin-small-right"></span>Accent Colors</a></li>
+<li><a href="#colors"><span uk-icon="icon:paint-bucket;ratio:0.8" class="uk-margin-small-right"></span>Colors &amp; Tokens</a></li>
+<li><a href="#typography"><span uk-icon="icon:file-text;ratio:0.8" class="uk-margin-small-right"></span>Typography</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Components</li>
+<li><a href="#buttons"><span uk-icon="icon:plus-circle;ratio:0.8" class="uk-margin-small-right"></span>Buttons</a></li>
+<li><a href="#forms"><span uk-icon="icon:file-edit;ratio:0.8" class="uk-margin-small-right"></span>Form Elements</a></li>
+<li><a href="#labels"><span uk-icon="icon:tag;ratio:0.8" class="uk-margin-small-right"></span>Labels &amp; Badges</a></li>
+<li><a href="#alerts"><span uk-icon="icon:warning;ratio:0.8" class="uk-margin-small-right"></span>Alerts</a></li>
+<li><a href="#tables"><span uk-icon="icon:table;ratio:0.8" class="uk-margin-small-right"></span>Tables</a></li>
+<li><a href="#tabs"><span uk-icon="icon:menu;ratio:0.8" class="uk-margin-small-right"></span>Tab &amp; Subnav</a></li>
+<li><a href="#cards"><span uk-icon="icon:thumbnails;ratio:0.8" class="uk-margin-small-right"></span>Cards</a></li>
+<li><a href="#accordion"><span uk-icon="icon:list;ratio:0.8" class="uk-margin-small-right"></span>Accordion</a></li>
+<li><a href="#nav"><span uk-icon="icon:menu;ratio:0.8" class="uk-margin-small-right"></span>Nav</a></li>
+<li><a href="#icons"><span uk-icon="icon:star;ratio:0.8" class="uk-margin-small-right"></span>Icons</a></li>
+<li><a href="#lists"><span uk-icon="icon:list;ratio:0.8" class="uk-margin-small-right"></span>Lists</a></li>
+<li><a href="#progress"><span uk-icon="icon:clock;ratio:0.8" class="uk-margin-small-right"></span>Progress</a></li>
+<li><a href="#headings"><span uk-icon="icon:bold;ratio:0.8" class="uk-margin-small-right"></span>Heading Styles</a></li>
+<li><a href="#tiles"><span uk-icon="icon:grid;ratio:0.8" class="uk-margin-small-right"></span>Sections &amp; Tiles</a></li>
+<li><a href="#overlay"><span uk-icon="icon:image;ratio:0.8" class="uk-margin-small-right"></span>Overlay &amp; Marker</a></li>
+<li><a href="#dotnav"><span uk-icon="icon:more;ratio:0.8" class="uk-margin-small-right"></span>Dotnav &amp; Slidenav</a></li>
+<li><a href="#text-utils"><span uk-icon="icon:strikethrough;ratio:0.8" class="uk-margin-small-right"></span>Text Utilities</a></li>
+<li><a href="#utility"><span uk-icon="icon:cog;ratio:0.8" class="uk-margin-small-right"></span>Utility Classes</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Patterns</li>
+<li><a href="#masthead"><span uk-icon="icon:home;ratio:0.8" class="uk-margin-small-right"></span>Masthead</a></li>
+<li><a href="#breadcrumb"><span uk-icon="icon:arrow-right;ratio:0.8" class="uk-margin-small-right"></span>Breadcrumb</a></li>
+<li><a href="#inputfields"><span uk-icon="icon:settings;ratio:0.8" class="uk-margin-small-right"></span>Inputfield Wrappers</a></li>
+<li><a href="#module-guidelines"><span uk-icon="icon:code;ratio:0.8" class="uk-margin-small-right"></span>Module Guidelines</a></li>
+<li><a href="#modals"><span uk-icon="icon:expand;ratio:0.8" class="uk-margin-small-right"></span>Modal</a></li>
+<li><a href="#offcanvas"><span uk-icon="icon:push;ratio:0.8" class="uk-margin-small-right"></span>Offcanvas</a></li>
+<li><a href="#dropdown"><span uk-icon="icon:triangle-down;ratio:0.8" class="uk-margin-small-right"></span>Dropdown &amp; Navbar DD</a></li>
+<li><a href="#lightbox"><span uk-icon="icon:image;ratio:0.8" class="uk-margin-small-right"></span>Lightbox</a></li>
+<li><a href="#notifications"><span uk-icon="icon:bell;ratio:0.8" class="uk-margin-small-right"></span>Notifications</a></li>
+<li><a href="#pagination"><span uk-icon="icon:more;ratio:0.8" class="uk-margin-small-right"></span>Pagination</a></li>
+<li><a href="#description-list"><span uk-icon="icon:info;ratio:0.8" class="uk-margin-small-right"></span>Description List</a></li>
+<li><a href="#search"><span uk-icon="icon:search;ratio:0.8" class="uk-margin-small-right"></span>Search</a></li>
+<li><a href="#comment"><span uk-icon="icon:comment;ratio:0.8" class="uk-margin-small-right"></span>Comment</a></li>
+<li><a href="#panel"><span uk-icon="icon:file-text;ratio:0.8" class="uk-margin-small-right"></span>Panel &amp; Scrollable</a></li>
+<li class="uk-nav-divider"></li>
+<li class="uk-nav-header">Theming</li>
+<li><a href="#overrides"><span uk-icon="icon:code;ratio:0.8" class="uk-margin-small-right"></span>CSS Overrides</a></li>
+</ul>
+</aside>
+<div class="uk-width-expand">
+<div class="uk-container uk-container-expand uk-padding">
+
+<div class="uk-margin-large-bottom" style="max-width:700px;">
+<span class="uk-label uk-margin-small-bottom" style="display:inline-block;">ProcessWire CMS</span>
+<h1 class="uk-heading-medium uk-margin-small-top">Konkat Default<br>Design System</h1>
+<p class="uk-text-lead uk-text-muted">Default AdminThemeUikit skin for ProcessWire 3.0.255+. Native <code>uk-*</code> classes, ProcessWire admin patterns, and runtime <code>--pw-*</code> tokens for light and dark mode.</p>
+</div>

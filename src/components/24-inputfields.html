@@ -1,0 +1,75 @@
+<section id="inputfields" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">Inputfield Wrappers</h2>
+<p class="uk-text-muted">Real ProcessWire wrapper markup from <code>InputfieldWrapper</code>: <code>ul.Inputfields</code>, <code>li.Inputfield</code>, <code>label.InputfieldHeader</code>, and <code>div.InputfieldContent</code>. Use this structure for native module forms.</p>
+<div class="ds-section-label">Standard Inputfield Form</div>
+<form class="InputfieldForm" action="#" method="post">
+<ul class="Inputfields">
+<li id="wrap_Inputfield_title" class="Inputfield InputfieldText Inputfield_title InputfieldStateRequired">
+<label class="InputfieldHeader ui-widget-header" for="Inputfield_title"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Title</label>
+<div class="InputfieldContent ui-widget-content">
+<input id="Inputfield_title" class="uk-input" type="text" name="title" value="Home Page">
+<p class="description">Required page title.</p>
+</div>
+</li>
+<li id="wrap_Inputfield_body" class="Inputfield InputfieldTextarea Inputfield_body">
+<label class="InputfieldHeader ui-widget-header" for="Inputfield_body"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Body</label>
+<div class="InputfieldContent ui-widget-content">
+<textarea id="Inputfield_body" class="uk-textarea" name="body" rows="3">Rich text...</textarea>
+<p class="notes">Notes use the same muted admin text pattern.</p>
+</div>
+</li>
+<li id="wrap_Inputfield_seo" class="Inputfield InputfieldText Inputfield_seo InputfieldStateCollapsed">
+<label class="InputfieldHeader ui-widget-header" for="Inputfield_seo"><i class="toggle-icon fa fa-fw fa-angle-down"></i>SEO Settings</label>
+<div class="InputfieldContent ui-widget-content">
+<input id="Inputfield_seo" class="uk-input" type="text" name="seo" placeholder="Meta description...">
+</div>
+</li>
+</ul>
+</form>
+
+<div class="ds-section-label uk-margin-top">InputfieldFieldset</div>
+<form class="InputfieldForm" action="#" method="post">
+<ul class="Inputfields">
+<li id="wrap_Inputfield_settings" class="Inputfield InputfieldFieldset Inputfield_settings">
+<label class="InputfieldHeader ui-widget-header" for="Inputfield_settings"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Settings</label>
+<div class="InputfieldContent ui-widget-content">
+<ul class="Inputfields">
+<li id="wrap_Inputfield_status" class="Inputfield InputfieldRadios Inputfield_status">
+<label class="InputfieldHeader ui-widget-header" for="Inputfield_status"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Status</label>
+<div class="InputfieldContent ui-widget-content uk-form-controls-text">
+<label><input class="uk-radio" type="radio" name="status" checked> Published</label><br>
+<label><input class="uk-radio" type="radio" name="status"> Hidden</label>
+</div>
+</li>
+<li id="wrap_Inputfield_template" class="Inputfield InputfieldSelect Inputfield_template InputfieldIsHighlight">
+<label class="InputfieldHeader ui-widget-header" for="Inputfield_template"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Template</label>
+<div class="InputfieldContent ui-widget-content">
+<select id="Inputfield_template" class="uk-select" name="template"><option>basic-page</option><option>blog-post</option></select>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</form>
+
+<div class="ds-section-label uk-margin-top">States</div>
+<ul class="Inputfields">
+<li class="Inputfield InputfieldText InputfieldIsSuccess"><label class="InputfieldHeader ui-widget-header"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Success</label><div class="InputfieldContent ui-widget-content"><input class="uk-input" type="text" value="Saved"></div></li>
+<li class="Inputfield InputfieldText InputfieldIsWarning"><label class="InputfieldHeader ui-widget-header"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Warning</label><div class="InputfieldContent ui-widget-content"><input class="uk-input" type="text" value="Needs review"></div></li>
+<li class="Inputfield InputfieldText InputfieldIsError"><label class="InputfieldHeader ui-widget-header"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Error</label><div class="InputfieldContent ui-widget-content"><input class="uk-input uk-form-danger" type="text" value="Invalid value"><p class="InputfieldError ui-state-error"><i class="fa fa-fw fa-flash"></i><span>Field is required.</span></p></div></li>
+</ul>
+
+<div class="ds-section-label uk-margin-top">Repeater Header + useBoldItemHeaders</div>
+<ul class="Inputfields useBoldItemHeaders">
+<li class="Inputfield InputfieldRepeater">
+<label class="InputfieldHeader ui-widget-header"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Slides</label>
+<div class="InputfieldContent ui-widget-content">
+<ul class="Inputfields">
+<li class="Inputfield InputfieldRepeaterItem"><label class="InputfieldHeader ui-widget-header"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Slide 1</label><div class="InputfieldContent ui-widget-content"><input class="uk-input" type="text" value="Hero Banner"></div></li>
+<li class="Inputfield InputfieldRepeaterItem InputfieldStateCollapsed"><label class="InputfieldHeader ui-widget-header"><i class="toggle-icon fa fa-fw fa-angle-down"></i>Slide 2</label><div class="InputfieldContent ui-widget-content"><input class="uk-input" type="text" value="Features"></div></li>
+</ul>
+</div>
+</li>
+</ul>
+</section>

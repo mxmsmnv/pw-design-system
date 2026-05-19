@@ -1,0 +1,66 @@
+<section id="overrides" class="uk-margin-large-bottom" style="scroll-margin-top:20px;">
+<h2 class="uk-h3">CSS Overrides &amp; Config</h2>
+<div class="uk-card uk-card-default uk-card-body">
+<div class="ds-section-label">Colored Masthead</div>
+<div class="ds-code-block">:root {
+  --pw-masthead-background: var(--pw-main-color);
+  --pw-masthead-active-color: white;
+  --pw-masthead-text-color: rgba(255,255,255,0.8);
+  --pw-masthead-border-color: var(--pw-main-background);
+  --pw-masthead-logo-color: white;
+  --pw-masthead-input-background: var(--pw-masthead-background);
+  --pw-masthead-input-color: var(--pw-masthead-active-color);
+  --pw-masthead-input-border: var(--pw-masthead-text-color);
+  --pw-masthead-menu-item-background-hover: rgba(255,255,255,.2);
+}</div>
+<div class="ds-section-label uk-margin-top">Borderless</div>
+<div class="ds-code-block">:root {
+  --pw-border-color: var(--pw-main-background);
+  --pw-inputs-background: var(--pw-blocks-background);
+}</div>
+<div class="ds-section-label uk-margin-top">Konkat Theme Files</div>
+<div class="ds-code-block">wire/modules/AdminTheme/AdminThemeUikit/themes/default/
+  KONKAT_THEME.md
+  admin-custom.css
+  admin.css
+  admin.js
+  config.php
+  ready.php
+  examples/borderless.css
+  examples/masthead.css
+  examples/minimal.css
+  toggles/useBoldItemHeaders.css
+  toggles/usePageListButtons.css
+  toggles/useInputFocus.css
+  toggles/InputfieldTable.css</div>
+<div class="ds-section-label uk-margin-top">AdminThemeUikit Theme Settings</div>
+<div class="ds-code-block">// Installer/config theme names
+themeName = "default"   // Konkat default
+themeName = "original"  // Core original
+
+// Konkat settings from themes/default/config.php
+defaultStyleName = "light" | "dark" | "auto"
+defaultMainColor = "red" | "green" | "blue" | "custom"
+defaultMainColorCustom = "#eb1d61"
+defaultMainColorCustomDark = "#eb1d61"
+defaultCustomCssFile = "/site/templates/styles/my-skin.css"</div>
+<div class="ds-section-label uk-margin-top">CSS Toggles (themes/default/ready.php)</div>
+<p><span class="uk-label">useInputFocus</span> <span class="uk-label">useBoldItemHeaders</span> <span class="uk-label">usePageListButtons</span> <span class="uk-label">useTogcbx</span> <span class="uk-label">use2Colors</span> <span class="uk-label">noUserMenu</span></p>
+<div class="ds-section-label uk-margin-top">TinyMCE Integration</div>
+<p class="uk-text-small uk-text-muted">When TinyMCE uses the default <code>oxide</code> skin, Konkat swaps in <code>skin.min.css</code> and <code>content.css</code>. The editor content imports <code>admin-custom.css</code>, so the same <code>--pw-*</code> variables apply inside rich text fields.</p>
+<div class="ds-section-label uk-margin-top">setClasses() — Module Constructor</div>
+<div class="ds-code-block">$this->setClasses([
+  'input'          => 'uk-input',
+  'input-small'    => 'uk-input uk-form-small',
+  'input-checkbox' => 'uk-checkbox',
+  'input-radio'    => 'uk-radio',
+  'input-password' => 'uk-input uk-form-width-medium',
+  'select'         => 'uk-select',
+  'select-asm'     => 'uk-select uk-form-small',
+  'select-small'   => 'uk-select uk-form-small',
+  'textarea'       => 'uk-textarea',
+  'table'          => 'uk-table uk-table-divider uk-table-justify uk-table-small',
+  'dl'             => 'uk-description-list uk-description-list-divider',
+]);</div>
+</div>
+</section>
