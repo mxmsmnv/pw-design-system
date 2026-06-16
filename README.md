@@ -6,6 +6,10 @@ Author of this design-system reference: Maxim Semenov.
 
 ProcessWire, UIkit, AdminThemeUikit, Konkat theme assets, code samples, class names, trademarks, and any referenced third-party work remain the property of their respective creators.
 
+**Author:** Maxim Semenov  
+**Website:** [smnv.org](https://smnv.org)  
+**Email:** [maxim@smnv.org](mailto:maxim@smnv.org)
+
 If this project helps your work, consider supporting future development: [GitHub Sponsors](https://github.com/sponsors/mxmsmnv) or [smnv.org/sponsor](https://smnv.org/sponsor/).  
 
 ## Structure
