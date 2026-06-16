@@ -6,6 +6,8 @@ Author of this design-system reference: Maxim Semenov.
 
 ProcessWire, UIkit, AdminThemeUikit, Konkat theme assets, code samples, class names, trademarks, and any referenced third-party work remain the property of their respective creators.
 
+If this project helps your work, consider supporting future development: [GitHub Sponsors](https://github.com/sponsors/mxmsmnv) or [smnv.org/sponsor](https://smnv.org/sponsor/).  
+
 ## Structure
 
 - `index.html` - generated page for opening in a browser.
